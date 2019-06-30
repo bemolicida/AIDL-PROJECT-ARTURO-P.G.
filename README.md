@@ -53,7 +53,6 @@ We use two codes:
 
 We split the code in 7 sections:
 MOUNTING DRIVE
-
 ↳ we mount google drive CFPW images that were previously uploaded 
 
 IMPORTING PACKAGES
@@ -81,7 +80,7 @@ After this different tests are calculated with different parameter configuration
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image5%20-%20results%20code1.PNG?raw=true)
 
-#### First Test
+#### TEST 1: LR=1E-3, WD=0, N_EPOCHS=60 SIAMESE DECISION WITHOUT DATA AUGMENTATION
 
 |  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -94,4 +93,6 @@ After this different tests are calculated with different parameter configuration
 [![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image7%20-%20test1%20accuracy.png?raw=true)]()
 ##### Conclussions:
 The configuration present overfit, we can see a separation between validation and training looses and a convexity at 30 epochs
+
+
 
