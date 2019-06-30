@@ -7,8 +7,8 @@ Our first approach is to test different parameters of the optimizer, number of e
 
 
 For our exercise we have tested two net configurations:
-- Siamesse Decision Network with simple loss
-- Siamesse Decision Network with the average of two losses
+- Siamesse Decision Network with simple loss. traditional siamese net where two nets are calculated in paralel, the results are concatenated and the resulting loss is used to backpropagate
+- Siamesse Decision Network with the average of two losses. A different approach in which first we feed the siamese net with the positive (true same person pairs) cases and we obtain its loss, then we feed again the siamese net with negative cases (non same person pairs). Then the average of both losses is calculated and used to backpropagate.
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/image1%20-%20siamese.png?raw=true)
 
 *Image  from Amazon [Amazon](https://aws.amazon.com/es/blogs/machine-learning/combining-deep-learning-networks-gan-and-siamese-to-generate-high-quality-life-like-images/)
