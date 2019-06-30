@@ -52,19 +52,33 @@ We use two codes:
 ## Code  "ARTUR PALOMINO CODE1.ipynb"
 
 We split the code in 7 sections:
+
 MOUNTING DRIVE
+
 ↳ we mount google drive CFPW images that were previously uploaded 
+
 IMPORTING PACKAGES
+
 ↳ we import different packages needed for the execution
+
 CREATING DOWNLOADER CLASS
+
 ↳ The downloader class is used to feed the net with CFPW images
+
 CREATING SIAMESE NETWORKS (VGG WITH DIFFERENT OPTIONS)
+
 ↳ We have a VGG decision network and VGG linear network (that last not used)
+
 UTILITIES FOR METRICS OF OUR MODELS
+
 ↳ With this section we obtain the validation and training accuracy and losses
+
 LOOP FOR TRAINING
+
 ↳ In this section we create the model, calculate the loss and backpropagate
+
 LOOP FOR VALIDATION
+
 ↳ In this section the model is calculated with validation images
 
 After this different tests are calculated with different parameter configurations
