@@ -52,33 +52,26 @@ We use two codes:
 ## Code  "ARTUR PALOMINO CODE1.ipynb"
 
 We split the code in 7 sections:
-
 MOUNTING DRIVE
 
 ↳ we mount google drive CFPW images that were previously uploaded 
 
 IMPORTING PACKAGES
-
 ↳ we import different packages needed for the execution
 
 CREATING DOWNLOADER CLASS
-
 ↳ The downloader class is used to feed the net with CFPW images
 
 CREATING SIAMESE NETWORKS (VGG WITH DIFFERENT OPTIONS)
-
 ↳ We have a VGG decision network and VGG linear network (that last not used)
 
 UTILITIES FOR METRICS OF OUR MODELS
-
 ↳ With this section we obtain the validation and training accuracy and losses
 
 LOOP FOR TRAINING
-
 ↳ In this section we create the model, calculate the loss and backpropagate
 
 LOOP FOR VALIDATION
-
 ↳ In this section the model is calculated with validation images
 
 After this different tests are calculated with different parameter configurations
@@ -93,3 +86,12 @@ After this different tests are calculated with different parameter configuration
 |  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |VGG|ADAM|1E-3|0|T|16|T|F|F|DECISION NET|77|76|T|54|
+
+##### Loss image:
+[![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image6%20-%20test1%20loos.png?raw=true)]()
+
+##### Accuracy image:
+[![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image7%20-%20test1%20accuracy.png?raw=true)]()
+##### Conclussions:
+The configuration present overfit, we can see a separation between validation and training looses and a convexity at 30 epochs
+
