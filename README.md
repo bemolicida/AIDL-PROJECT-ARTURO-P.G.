@@ -18,12 +18,13 @@ For Each branch we choose two Pretrained Nets:
 - Alexnet
 
 Detail of the net structure
-VGG:
+- VGG:
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image2%20-%20vgg16.png?raw=true)
 
-*Image  from Neurohive [Neurohive](https://neurohive.io/en/popular-networks/vgg16/)
+- ALEXNET
 
+*Image  from Neurohive [Neurohive](https://neurohive.io/en/popular-networks/vgg16/)
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image3%20-%20AlexNet-CNN-architecture-layers.png?raw=true)
 
 *Image  from Researchgate [Researchgate](https://www.researchgate.net/figure/AlexNet-CNN-architecture-layers_fig1_318168077)
@@ -35,3 +36,4 @@ VGG:
 
 For the different tests we use the following parameters
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image4%20-%20parameters.PNG?raw=true)
+
