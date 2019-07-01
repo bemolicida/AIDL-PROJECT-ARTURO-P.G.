@@ -279,6 +279,19 @@ The configuration using a VGG and pretrain we obtain a nice validation accuracy 
 The configuration shows the best validation accuracy of the whole set of combinations, an 86%. The bad news is that it still has overfit.Another bad point is that the test accuracy is average, 82%
 
 
+#### TEST F: VGG, LR 1E-3 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
+
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|VGG|ADAM|1E-3|0|F|16|T|F|T|DECISION NET 2 LOSS|50|50|T|0|
+
+##### Loss image & Accuracy image:
+
+(No image)
+
+##### Conclussions:
+In order to test the learning rate 1e-3 we run again our last model, the results are the worst until the moment, the problem is that the accuracy never improves from 50%, the reason is that it's not possible for the model to arrive to the minimum loss beacuse the interval at every step is too big and the minimum is allways in the middle of the last two steps.
+
 
 
 
