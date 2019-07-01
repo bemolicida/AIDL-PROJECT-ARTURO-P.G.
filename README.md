@@ -232,13 +232,13 @@ The configuration is not optimal as it shows overfit. The accuracy is nice and w
 
 |  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-|Alexnet|ADAM|1E-5|0|F|16|F|F|T|DECISION NET 2 LOSS|81|80|F|59|
+|Alexnet|ADAM|1E-5|0|F|16|F|F|T|DECISION NET 2 LOSS|84|82|F|59|
 
 ##### Loss image & Accuracy image:
 [![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image20%20-%20testA%20loss.png?raw=true)]()
 
 ##### Conclussions:
-The configuration doesn't show overfit moreover we arrive to an outstanding validation accuracy of 84 and a test accuracy of 82, this is by far the best combination until that moment.
+The configuration doesn't show overfit moreover we arrive to an outstanding validation accuracy of 84 and a test accuracy of 82, this is by far the best combination until that moment. And as we will see this is the best model in the whole table, the one that we will use for the testing demo.
 
 
 #### TEST C: VGG, LR 1E-5 WD0 PRETRAIN=0 DATA AUGM=0 FREEZE=0
@@ -248,9 +248,37 @@ The configuration doesn't show overfit moreover we arrive to an outstanding vali
 |VGG|ADAM|1E-5|0|F|16|F|F|F|DECISION NET 2 LOSS|80|78|F|31|
 
 ##### Loss image & Accuracy image:
-[![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image20%20-%20testA%20loss.png?raw=true)]()
+[![N|Solid](https://raw.githubusercontent.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/master/images/Image21%20-%20testC%20loss.png?raw=true)]()
 
 ##### Conclussions:
 The configuration using a VGG shows worst results than the Alexnet in the same conditions, without data augmentation, without pretraining and without freeze, by the other hand the model has overfit.
+
+#### TEST D: VGG, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=0 FREEZE=0
+
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|VGG|ADAM|1E-5|0|F|16|T|F|F|DECISION NET 2 LOSS|84|83|T|5|
+
+##### Loss image & Accuracy image:
+[![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image22%20-%20testD%20loss.png?raw=true)]()
+
+##### Conclussions:
+The configuration using a VGG and pretrain we obtain a nice validation accuracy of 84 and a test accuracy of 83, better than the last model except for the fact that this one has overfit.
+
+
+#### TEST E: VGG, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
+
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|VGG|ADAM|1E-5|0|F|16|T|F|T|DECISION NET 2 LOSS|86|82|T|15|
+
+##### Loss image & Accuracy image:
+[![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image23%20-%20testE%20loss.png?raw=true)]()
+
+##### Conclussions:
+The configuration shows the best validation accuracy of the whole set of combinations, an 86%. The bad news is that it still has overfit.Another bad point is that the test accuracy is average, 82%
+
+
+
 
 
