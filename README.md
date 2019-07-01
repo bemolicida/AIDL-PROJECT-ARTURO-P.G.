@@ -91,8 +91,86 @@ After this different tests are calculated with different parameter configuration
 
 ##### Accuracy image:
 [![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image7%20-%20test1%20accuracy.png?raw=true)]()
+
 ##### Conclussions:
-The configuration present overfit, we can see a separation between validation and training looses and a convexity at 30 epochs
+The configuration presents overfit, we can see a separation between validation and training looses and a convexity at 30 epochs
+
+#### TEST 2: LR=1E-3, WD=0, N_EPOCHS=60 SIAMESE DECISION WITH DATA AUGMENTATION
+
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|VGG|ADAM|1E-3|0|T|16|T|F|T|DECISION NET|79|80|F|58|
+
+##### Loss image:
+[![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image8%20-%20test2%20loos.png?raw=true)]()
+
+##### Accuracy image:
+[![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image9%20-%20test2%20accuracy.png?raw=true)]()
+
+##### Conclussions:
+The configuration now doesn't present overfit, we have  a decent Validation accuracy and a nice test accuracy of 80%. As we will see in further combinations this one is the best candidate for a VGG with simple loss.
+
+
+#### TEST 3: LR=5E-4, WD=0, N_EPOCHS=60 SIAMESE DECISION WITH DATA AUGMENTATION
+
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|VGG|ADAM|5E-4|0|T|16|T|F|T|DECISION NET|80|78|F|47|
+
+##### Loss image:
+[![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image10%20-%20test3%20loss.png?raw=true)]()
+
+##### Accuracy image:
+[![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image11%20-%20test3%20accuracy.png?raw=true)]()
+
+##### Conclussions:
+The configuration presents a nice validation accuracy and no overfit, by the other hand we can see that the accuracy is lower than previous test for testing sample, that lead us to preffer test2 for being more stable in that sense.
+
+
+#### TEST 4: LR=1E-3, WD=0, N_EPOCHS=60 SIAMESE DECISION WITHOUT DATA AUGMENTATION WITH FREEZE
+
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|VGG|ADAM|1E-3|0|T|16|T|T|T|DECISION NET|50|50|...|0|
+
+##### Loss image:
+[![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image12%20-%20test4%20loss.png?raw=true)]()
+
+##### Accuracy image:
+[![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image13%20-%20test4%20accuracy.png?raw=true)]()
+
+##### Conclussions:
+In this execution we add freeze to the first 7 convolutional layers. The configuration presents strange values for losses and accuracies this is probably due to the fact that the learning rate is too big and the minimum loss is at a certain point that is inaccesible with an interval of 1e-3. We try in the next test to decrease this value to 5e-4 in order to verify our hipótesis. 
+
+#### TEST 5: LR=5E-4, WD=0, N_EPOCHS=60 SIAMESE DECISION WITHOUT DATA AUGMENTATION WITH FREEZE
+
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|VGG|ADAM|5e-4|0|T|16|T|T|T|DECISION NET|81|79|T|56|
+
+##### Loss image:
+[![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image14%20-%20test5%20loss.png?raw=true)]()
+
+##### Accuracy image:
+[![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image15%20-%20test5%20accuracy.png?raw=true)]()
+
+##### Conclussions:
+The configuration with this lr solves our previous test problem and now we arribe to the minimum loss easely. The bad point is that we continue having overfit. 
+
+#### TEST 6: LR=1E-5, WD=0, N_EPOCHS=60 SIAMESE DECISION WITHOUT DATA AUGMENTATION WITH FREEZE
+
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|VGG|ADAM|5e-4|0|T|16|T|T|T|DECISION NET|83|83|T|55|
+
+##### Loss image:
+[![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image16%20-%20test6%20loss.png?raw=true)]()
+
+##### Accuracy image:
+[![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image17%20-%20test6%20accuracy.png?raw=true)]()
+
+##### Conclussions:
+The configuration with the freeze and the learning rate of 1e-5 works great, we get an validation accuracy of 83 and a testing accuracy of 83 too. The problem that persists is the overfit that have been reflected in all tests with freeze that we have done.
 
 
 
