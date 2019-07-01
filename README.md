@@ -51,6 +51,8 @@ We use two codes:
 
 ## Code  "ARTUR PALOMINO CODE1.ipynb"
 
+This code is for testing different configurations for a VGG with single loss.
+
 We split the code in 7 sections:
 MOUNTING DRIVE
 ↳ we mount google drive CFPW images that were previously uploaded 
@@ -172,5 +174,83 @@ The configuration with this lr solves our previous test problem and now we arrib
 ##### Conclussions:
 The configuration with the freeze and the learning rate of 1e-5 works great, we get an validation accuracy of 83 and a testing accuracy of 83 too. The problem that persists is the overfit that have been reflected in all tests with freeze that we have done.
 
+
+
+
+
+## Code  "ARTUR PALOMINO CODE2.ipynb"
+
+This code is for testing different configurations for a VGG and an Alexnet with two losses.
+
+We split the code in the following sections:
+
+MOUNTING DRIVE
+↳ we mount google drive CFPW images that were previously uploaded 
+
+IMPORTING PACKAGES
+↳ we import different packages needed for the execution
+
+CREATING DOWNLOADER CLASS
+↳ The downloader class is used to feed the net with CFPW images
+
+CREATING MODELS
+↳ We have a VGG decision network and Alexnet with two losses.
+
+TRAIN
+↳ training function
+
+TEST
+↳ test function
+
+MAIN
+↳ main function
+
+DOWNLOAD FILES (JUST IN CASE)
+↳ download files from original websit in case needed
+
+After this different tests are calculated with different parameter configurations
+
+
+## Results for Code  "ARTUR PALOMINO CODE2.ipynb"
+
+![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image18%20-%20results%20code2.PNG?raw=true)
+
+#### TEST A: ALEXNET, LR 1E-5 WD0 PRETRAIN=0 DATA AUGM=0 FREEZE=0
+
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|Alexnet|ADAM|1E-5|0|F|16|F|F|F|DECISION NET 2 LOSS|81|80|T|15|
+
+##### Loss image & Accuracy image:
+[![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image19%20-%20testA%20loss.png?raw=true)]()
+
+##### Conclussions:
+The configuration is not optimal as it shows overfit. The accuracy is nice and we can see the the optimal accuracy is achieved fast, in less than 10 epochs. Another interesting thing is that this net trains 60 epochs in les than 60 minutes while VGG lasts 4 times more.
+
+
+#### TEST B: ALEXNET, LR 1E-5 WD0 PRETRAIN=0 DATA AUGM=1 FREEZE=0
+
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|Alexnet|ADAM|1E-5|0|F|16|F|F|T|DECISION NET 2 LOSS|81|80|F|59|
+
+##### Loss image & Accuracy image:
+[![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image20%20-%20testA%20loss.png?raw=true)]()
+
+##### Conclussions:
+The configuration doesn't show overfit moreover we arrive to an outstanding validation accuracy of 84 and a test accuracy of 82, this is by far the best combination until that moment.
+
+
+#### TEST C: VGG, LR 1E-5 WD0 PRETRAIN=0 DATA AUGM=0 FREEZE=0
+
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|VGG|ADAM|1E-5|0|F|16|F|F|F|DECISION NET 2 LOSS|80|78|F|31|
+
+##### Loss image & Accuracy image:
+[![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image20%20-%20testA%20loss.png?raw=true)]()
+
+##### Conclussions:
+The configuration using a VGG shows worst results than the Alexnet in the same conditions, without data augmentation, without pretraining and without freeze, by the other hand the model has overfit.
 
 
