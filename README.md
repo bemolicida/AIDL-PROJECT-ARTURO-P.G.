@@ -283,7 +283,7 @@ The configuration shows the best validation accuracy of the whole set of combina
 
 |  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-|VGG|ADAM|1E-3|0|F|16|T|F|T|DECISION NET 2 LOSS|50|50|T|0|
+|VGG|ADAM|1E-3|0|F|16|T|F|T|DECISION NET 2 LOSS|50|50|...|0|
 
 ##### Loss image & Accuracy image:
 
@@ -291,6 +291,114 @@ The configuration shows the best validation accuracy of the whole set of combina
 
 ##### Conclussions:
 In order to test the learning rate 1e-3 we run again our last model, the results are the worst until the moment, the problem is that the accuracy never improves from 50%, the reason is that it's not possible for the model to arrive to the minimum loss beacuse the interval at every step is too big and the minimum is allways in the middle of the last two steps.
+
+
+
+
+#### TEST G: VGG, LR 5E-4 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
+
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|VGG|ADAM|5E-4|0|F|16|T|F|T|DECISION NET 2 LOSS|50|50|...|0|
+
+##### Loss image & Accuracy image:
+
+![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image25%20-%20testG%20loss.png?raw=true)]
+
+##### Conclussions:
+In order to test again the model, the learning rate is fixed at 5e-4. We find exactly the same scenario as in testG.
+
+
+
+#### TEST H: VGG, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=1
+
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|VGG|ADAM|1E-5|0|F|16|T|T|T|DECISION NET 2 LOSS|84|84|T|16|
+
+##### Loss image & Accuracy image:
+
+![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image26%20-%20testH%20loss.png?raw=true)]
+
+##### Conclussions:
+In this combination we include the option freeze, freezing 7 convolutions of the pretrained layers on the VGG. The test accuracy shows the best results of the table, the problem again is the overfit
+
+
+#### TEST I: ALEXNET, LR 5E-4 WD0 PRETRAIN=0 DATA AUGM=1 FREEZE=0
+
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|Alexnet|ADAM|1E-5|0|F|16|F|F|T|DECISION NET 2 LOSS|83|81|F|239|
+
+##### Loss image & Accuracy image:
+
+![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image27%20-%20testI%20loss.png?raw=true)]
+
+##### Conclussions:
+In this combination we run more epochs for the alexnet of the Test B. As we can see, the combination still don't have overfit, is quite robust. The only problem is that we don't improve the accuracy level of Test B.
+
+
+
+
+#### TEST J: ALEXNET, LR 5E-4 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
+
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|Alexnet|ADAM|5E-4|0|F|16|T|F|T|DECISION NET 2 LOSS|50|50|...|0|
+
+##### Loss image & Accuracy image:
+
+![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image28%20-%20testJ%20loss.png?raw=true)]
+
+##### Conclussions:
+In this combination similarly to the case of test F and G we don't have convergency to the minimum of the loss
+
+
+
+
+#### TEST K: ALEXNET, LR 1E-3 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
+
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|Alexnet|ADAM|1E-3|0|F|16|T|F|T|DECISION NET 2 LOSS|50|50|...|0|
+
+##### Loss image & Accuracy image:
+
+![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image29%20-%20testk%20loss.png?raw=true)
+
+##### Conclussions:
+In this combination similarly to the case of test F and G we don't have convergency to the minimum of the loss
+
+
+#### TEST L: ALEXNET, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
+
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|Alexnet|ADAM|1E-5|0|F|16|T|F|T|DECISION NET 2 LOSS|83|82|T|137|
+
+##### Loss image & Accuracy image:
+
+![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image30%20-%20testL%20loss.png?raw=true)
+
+##### Conclussions:
+In this combination we have a nice accuracy of test and validation data but still has overfit
+
+
+
+
+#### TEST M: ALEXNET, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=1
+
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|Alexnet|ADAM|1E-5|0|F|16|T|T|T|DECISION NET 2 LOSS|78|78|T|179|
+
+##### Loss image & Accuracy image:
+
+![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image31%20-%20testM%20loss.png?raw=true)
+
+##### Conclussions:
+In this combination, freezing 3 layers of the convolutions we have poor accuracies and still shows overfit
+
 
 
 
