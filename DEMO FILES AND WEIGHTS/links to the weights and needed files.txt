@@ -1,0 +1,14 @@
+WEIGHTS:
+https://drive.google.com/open?id=1XUpkpaWa-AOOP4ttadmkvH6eWC_x6baL
+
+PAIR_LIST_F:
+https://drive.google.com/open?id=1rB9bvhGZP91gJEEDDB680CMfmC4iEmHV
+
+PAIR_LIST_P:
+https://drive.google.com/open?id=1boszDTWXzU1p0VORa-GXHZjyRYVZtwcI
+
+TEST IMAGES
+https://drive.google.com/open?id=1zn2SUvrdOj7DVWwb-RTdUa3-5ZZpX7H0
+
+
+
