@@ -402,14 +402,9 @@ In this combination, freezing 3 layers of the convolutions we have poor accuraci
 
 ## DEMO
 
-In order to check the results in a real example we add a piece of code at the testing funcion where two pairs of images are shown in real time. The first pair corresponds allways to different persons, the second pair correpond to the same person
+In order to check the results in a real example we add a piece of code at the testing funcion where two pairs of images are shown in real time. The row of the output corresponds allways to different persons, the second pair correpond to the same person. The model tryes to predict whether te person is the same or not. So if in the first row it predicts "Not the same person" this is correct, if in the second row ir predicts "The same person" then it is correct too.
 
 ##### Example with TEST E: VGG, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0 
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/DEMO.PNG?raw=true)
-
-
-
-
-
 
