@@ -238,7 +238,7 @@ The configuration is not optimal as it shows overfit. The accuracy is nice and w
 [![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image20%20-%20testA%20loss.png?raw=true)]()
 
 ##### Conclussions:
-The configuration doesn't show overfit moreover we arrive to an outstanding validation accuracy of 84 and a test accuracy of 82, this is by far the best combination until that moment. And as we will see this is the best model in the whole table, the one that we will use for the testing demo.
+The configuration doesn't show overfit moreover we arrive to an outstanding validation accuracy of 84 and a test accuracy of 82, this is by far the best combination until that moment. This is in fact one of the best options for Alexnet in this document.
 
 
 #### TEST C: VGG, LR 1E-5 WD0 PRETRAIN=0 DATA AUGM=0 FREEZE=0
@@ -270,13 +270,13 @@ The configuration using a VGG and pretrain we obtain a nice validation accuracy 
 
 |  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-|VGG|ADAM|1E-5|0|F|16|T|F|T|DECISION NET 2 LOSS|86|82|T|15|
+|VGG|ADAM|1E-5|0|F|16|T|F|T|DECISION NET 2 LOSS|86|84|T|15|
 
 ##### Loss image & Accuracy image:
 [![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image23%20-%20testE%20loss.png?raw=true)]()
 
 ##### Conclussions:
-The configuration shows the best validation accuracy of the whole set of combinations, an 86%. The bad news is that it still has overfit.Another bad point is that the test accuracy is average, 82%
+The configuration shows the best validation accuracy of the whole set of combinations, an 86%. Still have some overfit but validation curve increases gradually. It is probably the best option for the VGG with two losses.
 
 
 #### TEST F: VGG, LR 1E-3 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
@@ -384,8 +384,6 @@ In this combination similarly to the case of test F and G we don't have converge
 In this combination we have a nice accuracy of test and validation data but still has overfit
 
 
-
-
 #### TEST M: ALEXNET, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=1
 
 |  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
@@ -398,6 +396,18 @@ In this combination we have a nice accuracy of test and validation data but stil
 
 ##### Conclussions:
 In this combination, freezing 3 layers of the convolutions we have poor accuracies and still shows overfit
+
+
+
+
+## DEMO
+
+In order to check the results in a real example we add a piece of code at the testing funcion where two pairs of images are shown in real time. The first pair corresponds allways to different persons, the second pair correpond to the same person
+
+##### Example with TEST E: VGG, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0 
+
+![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/DEMO.PNG?raw=true)
+
 
 
 
