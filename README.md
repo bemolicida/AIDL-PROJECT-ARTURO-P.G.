@@ -3,11 +3,8 @@ ARTIFICIAL INTELLIGENCE AND DEEP LEARNING PROJECT - UPC
 
 
 ## Introduction
-
 Student: Arturo Palomino
-
 Team: 4
-
 Results of the final project of the Deep Learning and Artificial Intelligence post degree of the UPC talent-school.
 
 For this project different architectures have been tested in order to train a model able to recognize if two faces correspond to the same person. For this purpose we use Siamese networks that returns a classification output with a binary answer, in our case the answer is a vector of two elements. If the first element of the vector is higher than the second element then we can say that the person is the same, in other cases the person is not the same.
@@ -64,7 +61,7 @@ We use only two colab codes:
 -One for the Siamesse Decision Network with two losses: "ARTUR PALOMINO CODE2.ipynb"
 
 
-## Code  "ARTUR PALOMINO CODE1.ipynb" Structure
+## CODE  "ARTUR PALOMINO CODE1.ipynb" STRUCTURE
 
 This code is for testing different configurations for a VGG with single loss.
 
@@ -101,8 +98,51 @@ LOOP FOR VALIDATION
 After this different tests are calculated with different parameter configurations
 
 
-## Results for Code  "ARTUR PALOMINO CODE1.ipynb"
+## CODE  "ARTUR PALOMINO CODE2.ipynb" STRUCTURE
 
+This code is for testing different configurations for a VGG and an Alexnet with two losses.
+
+We split the code in the following sections:
+
+MOUNTING DRIVE
+
+↳ we mount google drive CFPW images that were previously uploaded 
+
+IMPORTING PACKAGES
+
+↳ we import different packages needed for the execution
+
+CREATING DOWNLOADER CLASS
+
+↳ The downloader class is used to feed the net with CFPW images
+
+CREATING MODELS
+
+↳ We have a VGG decision network and Alexnet with two losses.
+
+TRAIN
+
+↳ training function
+
+TEST
+
+↳ test function
+
+MAIN
+
+↳ main function
+
+DOWNLOAD FILES (JUST IN CASE)
+
+↳ download files from original websit in case needed
+
+After this different tests are calculated with different parameter configurations
+
+
+
+## CODE  "ARTUR PALOMINO CODE1.ipynb" EXECUTIONS
+
+The following table shows the different results for the second architecture for the siamese network with two losses.
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image5%20-%20results%20code1.PNG?raw=true)
 
 #### TEST 1: LR=1E-3, WD=0, N_EPOCHS=60 SIAMESE DECISION WITHOUT DATA AUGMENTATION
@@ -199,50 +239,9 @@ The configuration with the freeze and the learning rate of 1e-5 works great, we 
 
 
 
+## CODE  "ARTUR PALOMINO CODE2.ipynb" EXECUTIONS
 
-
-## Code  "ARTUR PALOMINO CODE2.ipynb" Structure
-
-This code is for testing different configurations for a VGG and an Alexnet with two losses.
-
-We split the code in the following sections:
-
-MOUNTING DRIVE
-
-↳ we mount google drive CFPW images that were previously uploaded 
-
-IMPORTING PACKAGES
-
-↳ we import different packages needed for the execution
-
-CREATING DOWNLOADER CLASS
-
-↳ The downloader class is used to feed the net with CFPW images
-
-CREATING MODELS
-
-↳ We have a VGG decision network and Alexnet with two losses.
-
-TRAIN
-
-↳ training function
-
-TEST
-
-↳ test function
-
-MAIN
-
-↳ main function
-
-DOWNLOAD FILES (JUST IN CASE)
-
-↳ download files from original websit in case needed
-
-After this different tests are calculated with different parameter configurations
-
-
-## Results for Code  "ARTUR PALOMINO CODE2.ipynb"
+The following table shows the different results for the first architecture, the siamese network with one loss.
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image18%20-%20results%20code2.PNG?raw=true)
 
@@ -449,5 +448,6 @@ In order to check the results in a real example we add a piece of code at the te
 ##### Example with TEST E: VGG, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0 
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/DEMO.PNG?raw=true)
+
 
 
