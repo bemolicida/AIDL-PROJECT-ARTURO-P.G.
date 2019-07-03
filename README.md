@@ -49,6 +49,9 @@ Detail of the net structures:
 
 
 For the different tests we use the following parameters
+
+
+
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image4%20-%20parameters.PNG?raw=true)
 For the Net in general all the members of the group made a test with a VGG, but we have also made other tests with other CNN like Alexnet.
 
@@ -201,7 +204,7 @@ The following table shows the different results for the second architecture for 
 
 #### LR=1E-3, WD=0, N_EPOCHS=60 SIAMESE DECISION WITHOUT DATA AUGMENTATION
 
-|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretr | Freeze | Data Augm | Architec. | Val.Acc | Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |VGG|ADAM|1E-3|0|T|16|T|F|F|DECISION NET|77|76|T|54|
 
@@ -218,7 +221,7 @@ The configuration presents overfit, we can see a separation between validation a
 
 #### LR=1E-3, WD=0, N_EPOCHS=60 SIAMESE DECISION WITH DATA AUGMENTATION
 
-|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretr | Freeze | Data Augm | Architec. | Val.Acc | Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |VGG|ADAM|1E-3|0|T|16|T|F|T|DECISION NET|79|80|F|58|
 
@@ -235,7 +238,7 @@ The configuration now doesn't present overfit, we have  a decent Validation accu
 
 #### LR=5E-4, WD=0, N_EPOCHS=60 SIAMESE DECISION WITH DATA AUGMENTATION
 
-|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretr | Freeze | Data Augm | Architec. | Val.Acc | Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |VGG|ADAM|5E-4|0|T|16|T|F|T|DECISION NET|80|78|F|47|
 
@@ -253,7 +256,7 @@ The configuration presents a nice validation accuracy and no overfit, by the oth
 
 #### LR=1E-3, WD=0, N_EPOCHS=60 SIAMESE DECISION WITHOUT DATA AUGMENTATION WITH FREEZE
 
-|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretr | Freeze | Data Augm | Architec. | Val.Acc | Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |VGG|ADAM|1E-3|0|T|16|T|T|T|DECISION NET|50|50|...|0|
 
@@ -271,7 +274,7 @@ In this execution we add freeze to the first 7 convolutional layers. The configu
 
 #### LR=5E-4, WD=0, N_EPOCHS=60 SIAMESE DECISION WITHOUT DATA AUGMENTATION WITH FREEZE
 
-|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretr | Freeze | Data Augm | Architec. | Val.Acc | Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |VGG|ADAM|5e-4|0|T|16|T|T|T|DECISION NET|81|79|T|56|
 
@@ -290,7 +293,7 @@ The configuration with this learning rate solves our previous test problem and n
 
 #### LR=1E-5, WD=0, N_EPOCHS=60 SIAMESE DECISION WITHOUT DATA AUGMENTATION WITH FREEZE
 
-|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretr | Freeze | Data Augm | Architec. | Val.Acc | Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |VGG|ADAM|5e-4|0|T|16|T|T|T|DECISION NET|83|83|T|55|
 
@@ -315,7 +318,7 @@ The following table shows the different results for the first architecture, the 
 
 #### ALEXNET, LR 1E-5 WD0 PRETRAIN=0 DATA AUGM=0 FREEZE=0
 
-|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretr | Freeze | Data Augm | Architec. | Val.Acc | Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |Alexnet|ADAM|1E-5|0|F|16|F|F|F|DECISION NET 2 LOSS|81|80|T|15|
 
@@ -330,7 +333,7 @@ The configuration is not optimal as it shows overfit. The accuracy is nice and w
 
 #### ALEXNET, LR 1E-5 WD0 PRETRAIN=0 DATA AUGM=1 FREEZE=0
 
-|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretr | Freeze | Data Augm | Architec. | Val.Acc | Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |Alexnet|ADAM|1E-5|0|F|16|F|F|T|DECISION NET 2 LOSS|84|82|F|59|
 
@@ -344,7 +347,7 @@ The configuration doesn't show overfit moreover we arrive to an outstanding vali
 
 #### VGG, LR 1E-5 WD0 PRETRAIN=0 DATA AUGM=0 FREEZE=0
 
-|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretr | Freeze | Data Augm | Architec. | Val.Acc | Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |VGG|ADAM|1E-5|0|F|16|F|F|F|DECISION NET 2 LOSS|80|78|F|31|
 
@@ -359,7 +362,7 @@ The configuration using a VGG shows worst results than the Alexnet in the same c
 
 #### VGG, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=0 FREEZE=0
 
-|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretr | Freeze | Data Augm | Architec. | Val.Acc | Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |VGG|ADAM|1E-5|0|F|16|T|F|F|DECISION NET 2 LOSS|84|83|T|5|
 
@@ -373,7 +376,7 @@ The configuration using a VGG and pretrain we obtain a nice validation accuracy 
 
 #### VGG, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
 
-|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretr | Freeze | Data Augm | Architec. | Val.Acc | Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |VGG|ADAM|1E-5|0|F|16|T|F|T|DECISION NET 2 LOSS|86|84|T|15|
 
@@ -388,7 +391,7 @@ The configuration shows the best validation accuracy of the whole set of combina
 
 #### VGG, LR 1E-3 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
 
-|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretr | Freeze | Data Augm | Architec. | Val.Acc | Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |VGG|ADAM|1E-3|0|F|16|T|F|T|DECISION NET 2 LOSS|50|50|...|0|
 
@@ -404,7 +407,7 @@ In order to test the learning rate 1e-3 we run again our last model, the results
 
 #### VGG, LR 5E-4 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
 
-|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretr | Freeze | Data Augm | Architec. | Val.Acc | Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |VGG|ADAM|5E-4|0|F|16|T|F|T|DECISION NET 2 LOSS|50|50|...|0|
 
@@ -419,7 +422,7 @@ In order to test again the model, the learning rate is fixed at 5e-4. We find ex
 
 #### VGG, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=1
 
-|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretr | Freeze | Data Augm | Architec. | Val.Acc | Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |VGG|ADAM|1E-5|0|F|16|T|T|T|DECISION NET 2 LOSS|84|84|T|16|
 
@@ -434,7 +437,7 @@ In this combination we include the option freeze, freezing 7 convolutions of the
 
 #### ALEXNET, LR 5E-4 WD0 PRETRAIN=0 DATA AUGM=1 FREEZE=0
 
-|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretr | Freeze | Data Augm | Architec. | Val.Acc | Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |Alexnet|ADAM|1E-5|0|F|16|F|F|T|DECISION NET 2 LOSS|83|81|F|239|
 
@@ -450,7 +453,7 @@ In this combination we run more epochs for the alexnet of the Test B. As we can 
 
 #### ALEXNET, LR 5E-4 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
 
-|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretr | Freeze | Data Augm | Architec. | Val.Acc | Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |Alexnet|ADAM|5E-4|0|F|16|T|F|T|DECISION NET 2 LOSS|50|50|...|0|
 
@@ -466,7 +469,7 @@ In this combination similarly to the case of test F and G we don't have converge
 
 #### ALEXNET, LR 1E-3 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
 
-|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretr | Freeze | Data Augm | Architec. | Val.Acc | Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |Alexnet|ADAM|1E-3|0|F|16|T|F|T|DECISION NET 2 LOSS|50|50|...|0|
 
@@ -481,7 +484,7 @@ In this combination similarly to the case of test F and G we don't have converge
 
 #### ALEXNET, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
 
-|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretr | Freeze | Data Augm | Architec. | Val.Acc | Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |Alexnet|ADAM|1E-5|0|F|16|T|F|T|DECISION NET 2 LOSS|83|82|T|137|
 
@@ -496,7 +499,7 @@ In this combination we have a nice accuracy of test and validation data but stil
 
 #### ALEXNET, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=1
 
-|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
+|  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretr | Freeze | Data Augm | Architec. | Val.Acc | Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |Alexnet|ADAM|1E-5|0|F|16|T|T|T|DECISION NET 2 LOSS|78|78|T|179|
 
