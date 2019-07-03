@@ -32,7 +32,7 @@ Detail of the net structures:
 
 - VGG:
 
-![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image2%20-%20vgg16.png?raw=true)
+![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image2%20-%20vgg16%20b.png?raw=true)
 
 - ALEXNET
 
@@ -96,6 +96,12 @@ LOOP FOR VALIDATION
 ↳ In this section the model is calculated with validation images
 
 After this different tests are calculated with different parameter configurations
+TEST 1: LR=1E-3, WD=0, N_EPOCHS=60 SIAMESE DECISION WITHOUT DATA AUGMENTATION
+TEST 2: LR=1E-3, WD=0, N_EPOCHS=60 SIAMESE DECISION WITH DATA AUGMENTATION
+TEST 3: LR=5E-4, WD=0, N_EPOCHS=60 SIAMESE DECISION WITH DATA AUGMENTATION
+TEST 4: LR=1E-3, WD=0, N_EPOCHS=60 SIAMESE DECISION WITHOUT DATA AUGMENTATION WITH FREEZE
+TEST 5: LR=5E-4, WD=0, N_EPOCHS=60 SIAMESE DECISION WITHOUT DATA AUGMENTATION WITH FREEZE
+TEST 6: LR=1E-5, WD=0, N_EPOCHS=60 SIAMESE DECISION WITHOUT DATA AUGMENTATION WITH FREEZE
 
 
 ## CODE  "ARTUR PALOMINO CODE2.ipynb" STRUCTURE
@@ -137,6 +143,19 @@ DOWNLOAD FILES (JUST IN CASE)
 ↳ download files from original websit in case needed
 
 After this different tests are calculated with different parameter configurations
+TEST A: ALEXNET, LR 1E-5 WD0 PRETRAIN=0 DATA AUGM=0 FREEZE=0
+TEST B: ALEXNET, LR 1E-5 WD0 PRETRAIN=0 DATA AUGM=1 FREEZE=0
+TEST C: VGG, LR 1E-5 WD0 PRETRAIN=0 DATA AUGM=0 FREEZE=0
+TEST D: VGG, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=0 FREEZE=0
+TEST E: VGG, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
+TEST F: VGG, LR 1E-3 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
+TEST G: VGG, LR 5E-4 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
+TEST H: VGG, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=1
+TEST I: ALEXNET, LR 5E-4 WD0 PRETRAIN=0 DATA AUGM=1 FREEZE=0
+TEST J: ALEXNET, LR 5E-4 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
+TEST K: ALEXNET, LR 1E-3 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
+TEST L: ALEXNET, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
+TEST M: ALEXNET, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=1
 
 
 
@@ -145,7 +164,9 @@ After this different tests are calculated with different parameter configuration
 The following table shows the different results for the second architecture for the siamese network with two losses.
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image5%20-%20results%20code1.PNG?raw=true)
 
-#### TEST 1: LR=1E-3, WD=0, N_EPOCHS=60 SIAMESE DECISION WITHOUT DATA AUGMENTATION
+### TEST 1
+
+#### LR=1E-3, WD=0, N_EPOCHS=60 SIAMESE DECISION WITHOUT DATA AUGMENTATION
 
 |  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -160,7 +181,9 @@ The following table shows the different results for the second architecture for 
 ##### Conclussions:
 The configuration presents overfit, we can see a separation between validation and training looses and a convexity at 30 epochs
 
-#### TEST 2: LR=1E-3, WD=0, N_EPOCHS=60 SIAMESE DECISION WITH DATA AUGMENTATION
+### TEST 2
+
+#### LR=1E-3, WD=0, N_EPOCHS=60 SIAMESE DECISION WITH DATA AUGMENTATION
 
 |  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -175,8 +198,9 @@ The configuration presents overfit, we can see a separation between validation a
 ##### Conclussions:
 The configuration now doesn't present overfit, we have  a decent Validation accuracy and a nice test accuracy of 80%. As we will see in further combinations this one is the best candidate for a VGG with simple loss.
 
+### TEST 3
 
-#### TEST 3: LR=5E-4, WD=0, N_EPOCHS=60 SIAMESE DECISION WITH DATA AUGMENTATION
+#### LR=5E-4, WD=0, N_EPOCHS=60 SIAMESE DECISION WITH DATA AUGMENTATION
 
 |  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -191,8 +215,10 @@ The configuration now doesn't present overfit, we have  a decent Validation accu
 ##### Conclussions:
 The configuration presents a nice validation accuracy and no overfit, by the other hand we can see that the accuracy is lower than previous test for testing sample, that lead us to preffer test2 for being more stable in that sense.
 
+### TEST 4
 
-#### TEST 4: LR=1E-3, WD=0, N_EPOCHS=60 SIAMESE DECISION WITHOUT DATA AUGMENTATION WITH FREEZE
+
+#### LR=1E-3, WD=0, N_EPOCHS=60 SIAMESE DECISION WITHOUT DATA AUGMENTATION WITH FREEZE
 
 |  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -207,7 +233,10 @@ The configuration presents a nice validation accuracy and no overfit, by the oth
 ##### Conclussions:
 In this execution we add freeze to the first 7 convolutional layers. The configuration presents strange values for losses and accuracies this is probably due to the fact that the learning rate is too big and the minimum loss is at a certain point that is inaccesible with an interval of 1e-3. We try in the next test to decrease this value to 5e-4 in order to verify our hipótesis. 
 
-#### TEST 5: LR=5E-4, WD=0, N_EPOCHS=60 SIAMESE DECISION WITHOUT DATA AUGMENTATION WITH FREEZE
+
+### TEST 5:
+
+#### LR=5E-4, WD=0, N_EPOCHS=60 SIAMESE DECISION WITHOUT DATA AUGMENTATION WITH FREEZE
 
 |  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -222,7 +251,10 @@ In this execution we add freeze to the first 7 convolutional layers. The configu
 ##### Conclussions:
 The configuration with this lr solves our previous test problem and now we arribe to the minimum loss easely. The bad point is that we continue having overfit. 
 
-#### TEST 6: LR=1E-5, WD=0, N_EPOCHS=60 SIAMESE DECISION WITHOUT DATA AUGMENTATION WITH FREEZE
+### TEST 6:
+
+
+#### LR=1E-5, WD=0, N_EPOCHS=60 SIAMESE DECISION WITHOUT DATA AUGMENTATION WITH FREEZE
 
 |  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -245,7 +277,9 @@ The following table shows the different results for the first architecture, the 
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image18%20-%20results%20code2.PNG?raw=true)
 
-#### TEST A: ALEXNET, LR 1E-5 WD0 PRETRAIN=0 DATA AUGM=0 FREEZE=0
+### TEST A:
+
+#### ALEXNET, LR 1E-5 WD0 PRETRAIN=0 DATA AUGM=0 FREEZE=0
 
 |  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -257,8 +291,9 @@ The following table shows the different results for the first architecture, the 
 ##### Conclussions:
 The configuration is not optimal as it shows overfit. The accuracy is nice and we can see the the optimal accuracy is achieved fast, in less than 10 epochs. Another interesting thing is that this net trains 60 epochs in les than 60 minutes while VGG lasts 4 times more.
 
+### TEST B:
 
-#### TEST B: ALEXNET, LR 1E-5 WD0 PRETRAIN=0 DATA AUGM=1 FREEZE=0
+#### ALEXNET, LR 1E-5 WD0 PRETRAIN=0 DATA AUGM=1 FREEZE=0
 
 |  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -270,8 +305,9 @@ The configuration is not optimal as it shows overfit. The accuracy is nice and w
 ##### Conclussions:
 The configuration doesn't show overfit moreover we arrive to an outstanding validation accuracy of 84 and a test accuracy of 82, this is by far the best combination until that moment. This is in fact one of the best options for Alexnet in this document.
 
+### TEST C:
 
-#### TEST C: VGG, LR 1E-5 WD0 PRETRAIN=0 DATA AUGM=0 FREEZE=0
+#### VGG, LR 1E-5 WD0 PRETRAIN=0 DATA AUGM=0 FREEZE=0
 
 |  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -283,7 +319,10 @@ The configuration doesn't show overfit moreover we arrive to an outstanding vali
 ##### Conclussions:
 The configuration using a VGG shows worst results than the Alexnet in the same conditions, without data augmentation, without pretraining and without freeze, by the other hand the model has overfit.
 
-#### TEST D: VGG, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=0 FREEZE=0
+
+### TEST D:
+
+#### VGG, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=0 FREEZE=0
 
 |  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -295,8 +334,9 @@ The configuration using a VGG shows worst results than the Alexnet in the same c
 ##### Conclussions:
 The configuration using a VGG and pretrain we obtain a nice validation accuracy of 84 and a test accuracy of 83, better than the last model except for the fact that this one has overfit.
 
+### TEST E:
 
-#### TEST E: VGG, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
+#### VGG, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
 
 |  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -309,7 +349,9 @@ The configuration using a VGG and pretrain we obtain a nice validation accuracy 
 The configuration shows the best validation accuracy of the whole set of combinations, an 86%. Still have some overfit but validation curve increases gradually. It is probably the best option for the VGG with two losses.
 
 
-#### TEST F: VGG, LR 1E-3 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
+### TEST F:
+
+#### VGG, LR 1E-3 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
 
 |  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -323,9 +365,9 @@ The configuration shows the best validation accuracy of the whole set of combina
 In order to test the learning rate 1e-3 we run again our last model, the results are the worst until the moment, the problem is that the accuracy never improves from 50%, the reason is that it's not possible for the model to arrive to the minimum loss beacuse the interval at every step is too big and the minimum is allways in the middle of the last two steps.
 
 
+### TEST G:
 
-
-#### TEST G: VGG, LR 5E-4 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
+#### VGG, LR 5E-4 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
 
 |  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -338,9 +380,9 @@ In order to test the learning rate 1e-3 we run again our last model, the results
 ##### Conclussions:
 In order to test again the model, the learning rate is fixed at 5e-4. We find exactly the same scenario as in testG.
 
+### TEST H:
 
-
-#### TEST H: VGG, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=1
+#### VGG, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=1
 
 |  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -353,8 +395,9 @@ In order to test again the model, the learning rate is fixed at 5e-4. We find ex
 ##### Conclussions:
 In this combination we include the option freeze, freezing 7 convolutions of the pretrained layers on the VGG. The test accuracy shows the best results of the table, the problem again is the overfit
 
+### TEST I:
 
-#### TEST I: ALEXNET, LR 5E-4 WD0 PRETRAIN=0 DATA AUGM=1 FREEZE=0
+#### ALEXNET, LR 5E-4 WD0 PRETRAIN=0 DATA AUGM=1 FREEZE=0
 
 |  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -369,8 +412,9 @@ In this combination we run more epochs for the alexnet of the Test B. As we can 
 
 
 
+### TEST J:
 
-#### TEST J: ALEXNET, LR 5E-4 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
+#### ALEXNET, LR 5E-4 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
 
 |  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -385,8 +429,9 @@ In this combination similarly to the case of test F and G we don't have converge
 
 
 
+### TEST K:
 
-#### TEST K: ALEXNET, LR 1E-3 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
+#### ALEXNET, LR 1E-3 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
 
 |  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -399,8 +444,9 @@ In this combination similarly to the case of test F and G we don't have converge
 ##### Conclussions:
 In this combination similarly to the case of test F and G we don't have convergency to the minimum of the loss
 
+### TEST L:
 
-#### TEST L: ALEXNET, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
+#### ALEXNET, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
 
 |  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -413,8 +459,9 @@ In this combination similarly to the case of test F and G we don't have converge
 ##### Conclussions:
 In this combination we have a nice accuracy of test and validation data but still has overfit
 
+### TEST M:
 
-#### TEST M: ALEXNET, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=1
+#### ALEXNET, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=1
 
 |  Net | Optim  | LR | WD | Drop out  | Batch sz  |  Pretrain | Freeze | Data Augmentation | Variations | Best epoch val.accur. | Best e.Test accur. | Overfit | B.epoch |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -441,6 +488,10 @@ Alexnet can train in 1 hour 60 epochs while VGG needs 4 hours for the same numbe
 LR of 1e-3 normally is not a good option and 1e-5 & 5e-4 normally worked better
 
 
+## FUTURE WORK
+
+In future works I will try to run other networkds (resnet, densenet, googlenet) and losses (triple loss, constractive loss). Another improve according with last class (june 27th) recomendations to arrive better to global minimum I will try to rerun the best combinations with pure SGD, as it seems to be slower but with better results.
+
 ## DEMO
 
 In order to check the results in a real example we add a piece of code at the testing funcion where two pairs of images are shown in real time. The row of the output corresponds allways to different persons, the second pair correpond to the same person. The model tryes to predict whether te person is the same or not. So if in the first row it predicts "Not the same person" this is correct, if in the second row ir predicts "The same person" then it is correct too.
@@ -448,6 +499,8 @@ In order to check the results in a real example we add a piece of code at the te
 ##### Example with TEST E: VGG, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0 
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/DEMO.PNG?raw=true)
+
+
 
 
 
