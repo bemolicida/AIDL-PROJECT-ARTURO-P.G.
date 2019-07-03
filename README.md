@@ -18,6 +18,19 @@ Our first approach is to test different parameters of the optimizer, number of e
 
 ## Codes Structure
 
+```bash
+AIDL-PROJECT-ARTURO-PALOMINO
+├── images
+│   ├── *.png
+├── DEMO FILES AND WEIGHTS
+│   ├── Artur Demo.ipynb
+│   ├── links to the weights and needed files.txt
+├── ARTUR PALOMINO CODE1.ipynb
+├── ARTUR PALOMINO CODE2.ipynb
+└── README.md
+```
+
+
 I mainly use two colab codes:
 
 -One for the Siamesse Decision Network with single loss: "ARTUR PALOMINO CODE1.ipynb"
