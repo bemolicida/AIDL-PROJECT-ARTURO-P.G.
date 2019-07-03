@@ -4,7 +4,9 @@ ARTIFICIAL INTELLIGENCE AND DEEP LEARNING PROJECT - UPC
 
 ## Introduction
 Student: Arturo Palomino
+
 Team: 4
+
 Results of the final project of the Deep Learning and Artificial Intelligence post degree of the UPC talent-school.
 
 For this project different architectures have been tested in order to train a model able to recognize if two faces correspond to the same person. For this purpose we use Siamese networks that returns a classification output with a binary answer, in our case the answer is a vector of two elements. If the first element of the vector is higher than the second element then we can say that the person is the same, in other cases the person is not the same.
@@ -69,31 +71,45 @@ We split the code in 7 sections:
 
 MOUNTING DRIVE
 
+
 ↳ we mount google drive CFPW images that were previously uploaded 
+
 
 IMPORTING PACKAGES
 
+
 ↳ we import different packages needed for the execution
+
 
 CREATING DOWNLOADER CLASS
 
+
 ↳ The downloader class is used to feed the net with CFPW images
+
 
 CREATING SIAMESE NETWORKS (VGG WITH DIFFERENT OPTIONS)
 
+
 ↳ We have a VGG decision network and VGG linear network (that last not used)
+
 
 UTILITIES FOR METRICS OF OUR MODELS
 
+
 ↳ With this section we obtain the validation and training accuracy and losses
+
 
 LOOP FOR TRAINING
 
+
 ↳ In this section we create the model, calculate the loss and backpropagate
+
 
 LOOP FOR VALIDATION
 
+
 ↳ In this section the model is calculated with validation images
+
 
 After this different tests are calculated with different parameter configurations
 
@@ -204,37 +220,54 @@ This code is for testing different configurations for a VGG and an Alexnet with 
 
 We split the code in the following sections:
 
+
 MOUNTING DRIVE
+
 
 ↳ we mount google drive CFPW images that were previously uploaded 
 
+
 IMPORTING PACKAGES
+
 
 ↳ we import different packages needed for the execution
 
+
 CREATING DOWNLOADER CLASS
+
 
 ↳ The downloader class is used to feed the net with CFPW images
 
+
 CREATING MODELS
+
 
 ↳ We have a VGG decision network and Alexnet with two losses.
 
+
 TRAIN
+
 
 ↳ training function
 
+
 TEST
+
 
 ↳ test function
 
+
 MAIN
+
 
 ↳ main function
 
+
 DOWNLOAD FILES (JUST IN CASE)
 
+
 ↳ download files from original websit in case needed
+
 
 After this different tests are calculated with different parameter configurations
 
