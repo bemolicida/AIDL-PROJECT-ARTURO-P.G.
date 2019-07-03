@@ -1,14 +1,25 @@
 # AIDL-PROJECT-ARTURO-PALOMINO
 ARTIFICIAL INTELLIGENCE AND DEEP LEARNING PROJECT - UPC 
 
-Our first approach is to test different parameters of the optimizer, number of epochs, configuration of regularizations, and nets in order to arrive to the optimal combination that shows the best accuracy on validation and then with the choosen optimal combination make a test and check the test accuracy.
+
+## Introduction
+Student: Arturo Palomino
+Team: 4
+Results of the final project of the Deep Learning and Artificial Intelligence post degree of the UPC talent-school.
+
+For this project different architectures have been tested in order to train a model able to recognize if two faces correspond to the same person. For this purpose we use Siamese networks that returns a classification output with a binary answer, in our case the answer is a vector of two elements. If the first element of the vector is higher than the second element then we can say that the person is the same, in other cases the person is not the same.
+
+Our first approach is to test different parameters of the optimizer, number of epochs, configuration of regularizations, and nets in order to arrive to the optimal combination that shows the best accuracy on validation and then with the chosen optimal combination make a test and check the test accuracy.
+
 
 ## Models
 
 
 For our exercise we have tested two net configurations:
-- Siamesse Decision Network with simple loss. traditional siamese net where two nets are calculated in paralel, the results are concatenated and the resulting loss is used to backpropagate
-- Siamesse Decision Network with the average of two losses. A different approach in which first we feed the siamese net with the positive (true same person pairs) cases and we obtain its loss, then we feed again the siamese net with negative cases (non same person pairs). Then the average of both losses is calculated and used to backpropagate.
+- Siamese Decision Network with simple loss. traditional Siamese net where two nets are calculated in parallel, the results are concatenated, and the resulting loss is used to backpropagate
+- Siamese Decision Network with the average of two losses. A different approach in which first we feed the Siamese net with the positive (true same person pairs) cases and we obtain its loss, then we feed again the Siamese net with negative cases (non same person pairs). Then the average of both losses is calculated and used to backpropagate. In this way we ensure that exactly the 50% of the cases are of one case and 50% of the opposite, this mechanism helps the net to train better in the opinion of the author of this project.
+
+
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/image1%20-%20siamese.png?raw=true)
 
 *Image  from Amazon [Amazon](https://aws.amazon.com/es/blogs/machine-learning/combining-deep-learning-networks-gan-and-siamese-to-generate-high-quality-life-like-images/)
@@ -17,7 +28,8 @@ For Each branch we choose two Pretrained Nets:
 - VGG
 - Alexnet
 
-Detail of the net structure
+Detail of the net structures:
+
 - VGG:
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image2%20-%20vgg16.png?raw=true)
@@ -42,37 +54,45 @@ For the different tests we use the following parameters
 ## Codes
 
 
-We use two codes:
+We use only two colab codes:
 
 -One for the Siamesse Decision Network with single loss: "ARTUR PALOMINO CODE1.ipynb"
 
 -One for the Siamesse Decision Network with two losses: "ARTUR PALOMINO CODE2.ipynb"
 
 
-## Code  "ARTUR PALOMINO CODE1.ipynb"
+## Code  "ARTUR PALOMINO CODE1.ipynb" Structure
 
 This code is for testing different configurations for a VGG with single loss.
 
 We split the code in 7 sections:
+
 MOUNTING DRIVE
+
 ↳ we mount google drive CFPW images that were previously uploaded 
 
 IMPORTING PACKAGES
+
 ↳ we import different packages needed for the execution
 
 CREATING DOWNLOADER CLASS
+
 ↳ The downloader class is used to feed the net with CFPW images
 
 CREATING SIAMESE NETWORKS (VGG WITH DIFFERENT OPTIONS)
+
 ↳ We have a VGG decision network and VGG linear network (that last not used)
 
 UTILITIES FOR METRICS OF OUR MODELS
+
 ↳ With this section we obtain the validation and training accuracy and losses
 
 LOOP FOR TRAINING
+
 ↳ In this section we create the model, calculate the loss and backpropagate
 
 LOOP FOR VALIDATION
+
 ↳ In this section the model is calculated with validation images
 
 After this different tests are calculated with different parameter configurations
@@ -178,34 +198,42 @@ The configuration with the freeze and the learning rate of 1e-5 works great, we 
 
 
 
-## Code  "ARTUR PALOMINO CODE2.ipynb"
+## Code  "ARTUR PALOMINO CODE2.ipynb" Structure
 
 This code is for testing different configurations for a VGG and an Alexnet with two losses.
 
 We split the code in the following sections:
 
 MOUNTING DRIVE
+
 ↳ we mount google drive CFPW images that were previously uploaded 
 
 IMPORTING PACKAGES
+
 ↳ we import different packages needed for the execution
 
 CREATING DOWNLOADER CLASS
+
 ↳ The downloader class is used to feed the net with CFPW images
 
 CREATING MODELS
+
 ↳ We have a VGG decision network and Alexnet with two losses.
 
 TRAIN
+
 ↳ training function
 
 TEST
+
 ↳ test function
 
 MAIN
+
 ↳ main function
 
 DOWNLOAD FILES (JUST IN CASE)
+
 ↳ download files from original websit in case needed
 
 After this different tests are calculated with different parameter configurations
@@ -397,7 +425,18 @@ In this combination we have a nice accuracy of test and validation data but stil
 ##### Conclussions:
 In this combination, freezing 3 layers of the convolutions we have poor accuracies and still shows overfit
 
+## GENERAL CONCLUSSIONS
 
+VGG achieves better validation accuracy but generally with overfit.
+
+>Best option with VGG: 2 losses decision network, Pretrained, Adam, lr:1e-5, >wd=0, with data augmentation, dropout, 86 val Accuracy, 82 Test accuracy at >epoch 15
+
+ 
+Alexnet achieves good validation accuracy normally without overfit.
+Freeze seems to not work so well, although it makes the net train faster.
+Data augmentation makes the difference, there are increases of performance close to 4%. Not all transformations work well
+Alexnet can train in 1 hour 60 epochs while VGG needs 4 hours for the same number of epochs
+LR of 1e-3 normally is not a good option and 1e-5 & 5e-4 normally worked better
 
 
 ## DEMO
@@ -407,4 +446,5 @@ In order to check the results in a real example we add a piece of code at the te
 ##### Example with TEST E: VGG, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0 
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/DEMO.PNG?raw=true)
+
 
