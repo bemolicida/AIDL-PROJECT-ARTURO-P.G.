@@ -198,7 +198,7 @@ The following table shows the different results for the second architecture for 
 [![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image7%20-%20test1%20accuracy.png?raw=true)]()
 
 ##### Conclussions:
-The configuration presents overfit, we can see a separation between validation and training looses and a convexity at 30 epochs
+The configuration presents overfit, we can see a separation between validation and training loses and a convexity at 30 epochs
 
 ### TEST 2
 
@@ -231,8 +231,8 @@ The configuration now doesn't present overfit, we have  a decent Validation accu
 ##### Accuracy image:
 [![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image11%20-%20test3%20accuracy.png?raw=true)]()
 
-##### Conclussions:
-The configuration presents a nice validation accuracy and no overfit, by the other hand we can see that the accuracy is lower than previous test for testing sample, that lead us to preffer test2 for being more stable in that sense.
+##### Conclusions:
+The configuration presents a nice validation accuracy and no overfit, by the other hand we can see that the accuracy is lower than previous test for testing sample, that lead us to prefer test2 for being more stable in that sense.
 
 ### TEST 4
 
@@ -249,8 +249,8 @@ The configuration presents a nice validation accuracy and no overfit, by the oth
 ##### Accuracy image:
 [![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image13%20-%20test4%20accuracy.png?raw=true)]()
 
-##### Conclussions:
-In this execution we add freeze to the first 7 convolutional layers. The configuration presents strange values for losses and accuracies this is probably due to the fact that the learning rate is too big and the minimum loss is at a certain point that is inaccesible with an interval of 1e-3. We try in the next test to decrease this value to 5e-4 in order to verify our hipótesis. 
+##### Conclusions:
+In this execution we add freeze to the first 7 convolutional layers. The configuration presents strange values for losses and accuracies this is probably due to the fact that the learning rate is too big and the minimum loss is at a certain point that is inaccessible with an interval of 1e-3. We try in the next test to decrease this value to 5e-4 in order to verify our hypothesis.
 
 
 ### TEST 5:
@@ -267,8 +267,9 @@ In this execution we add freeze to the first 7 convolutional layers. The configu
 ##### Accuracy image:
 [![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image15%20-%20test5%20accuracy.png?raw=true)]()
 
-##### Conclussions:
-The configuration with this lr solves our previous test problem and now we arribe to the minimum loss easely. The bad point is that we continue having overfit. 
+##### Conclusions:
+The configuration with this learning rate solves our previous test problem and now we arrive to the minimum loss easily. The bad point is that we continue having overfit.
+
 
 ### TEST 6:
 
@@ -285,7 +286,7 @@ The configuration with this lr solves our previous test problem and now we arrib
 ##### Accuracy image:
 [![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image17%20-%20test6%20accuracy.png?raw=true)]()
 
-##### Conclussions:
+##### Conclusions:
 The configuration with the freeze and the learning rate of 1e-5 works great, we get an validation accuracy of 83 and a testing accuracy of 83 too. The problem that persists is the overfit that have been reflected in all tests with freeze that we have done.
 
 
@@ -308,7 +309,8 @@ The following table shows the different results for the first architecture, the 
 [![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image19%20-%20testA%20loss.png?raw=true)]()
 
 ##### Conclussions:
-The configuration is not optimal as it shows overfit. The accuracy is nice and we can see the the optimal accuracy is achieved fast, in less than 10 epochs. Another interesting thing is that this net trains 60 epochs in les than 60 minutes while VGG lasts 4 times more.
+The configuration is not optimal as it shows overfit. The accuracy is nice and we can see the optimal accuracy is achieved fast, in less than 10 epochs. Another interesting thing is that this net trains 60 epochs in less than 60 minutes while VGG lasts 4 times more.
+
 
 ### TEST B:
 
@@ -321,7 +323,7 @@ The configuration is not optimal as it shows overfit. The accuracy is nice and w
 ##### Loss image & Accuracy image:
 [![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image20%20-%20testA%20loss.png?raw=true)]()
 
-##### Conclussions:
+##### Conclusions:
 The configuration doesn't show overfit moreover we arrive to an outstanding validation accuracy of 84 and a test accuracy of 82, this is by far the best combination until that moment. This is in fact one of the best options for Alexnet in this document.
 
 ### TEST C:
@@ -335,7 +337,7 @@ The configuration doesn't show overfit moreover we arrive to an outstanding vali
 ##### Loss image & Accuracy image:
 [![N|Solid](https://raw.githubusercontent.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/master/images/Image21%20-%20testC%20loss.png?raw=true)]()
 
-##### Conclussions:
+##### Conclusions:
 The configuration using a VGG shows worst results than the Alexnet in the same conditions, without data augmentation, without pretraining and without freeze, by the other hand the model has overfit.
 
 
@@ -350,7 +352,7 @@ The configuration using a VGG shows worst results than the Alexnet in the same c
 ##### Loss image & Accuracy image:
 [![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image22%20-%20testD%20loss.png?raw=true)]()
 
-##### Conclussions:
+##### Conclusions:
 The configuration using a VGG and pretrain we obtain a nice validation accuracy of 84 and a test accuracy of 83, better than the last model except for the fact that this one has overfit.
 
 ### TEST E:
@@ -364,7 +366,7 @@ The configuration using a VGG and pretrain we obtain a nice validation accuracy 
 ##### Loss image & Accuracy image:
 [![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image23%20-%20testE%20loss.png?raw=true)]()
 
-##### Conclussions:
+##### Conclusions:
 The configuration shows the best validation accuracy of the whole set of combinations, an 86%. Still have some overfit but validation curve increases gradually. It is probably the best option for the VGG with two losses.
 
 
@@ -380,8 +382,8 @@ The configuration shows the best validation accuracy of the whole set of combina
 
 (No image)
 
-##### Conclussions:
-In order to test the learning rate 1e-3 we run again our last model, the results are the worst until the moment, the problem is that the accuracy never improves from 50%, the reason is that it's not possible for the model to arrive to the minimum loss beacuse the interval at every step is too big and the minimum is allways in the middle of the last two steps.
+##### Conclusions:
+In order to test the learning rate 1e-3 we run again our last model, the results are the worst until the moment, the problem is that the accuracy never improves from 50%, the reason is that it's not possible for the model to arrive to the minimum loss because the interval at every step is too big and the minimum is always in the middle of the last two steps.
 
 
 ### TEST G:
@@ -396,7 +398,7 @@ In order to test the learning rate 1e-3 we run again our last model, the results
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image25%20-%20testG%20loss.png?raw=true)]
 
-##### Conclussions:
+##### Conclusions:
 In order to test again the model, the learning rate is fixed at 5e-4. We find exactly the same scenario as in testG.
 
 ### TEST H:
@@ -411,7 +413,7 @@ In order to test again the model, the learning rate is fixed at 5e-4. We find ex
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image26%20-%20testH%20loss.png?raw=true)]
 
-##### Conclussions:
+##### Conclusions:
 In this combination we include the option freeze, freezing 7 convolutions of the pretrained layers on the VGG. The test accuracy shows the best results of the table, the problem again is the overfit
 
 ### TEST I:
@@ -426,9 +428,8 @@ In this combination we include the option freeze, freezing 7 convolutions of the
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image27%20-%20testI%20loss.png?raw=true)]
 
-##### Conclussions:
+##### Conclusions:
 In this combination we run more epochs for the alexnet of the Test B. As we can see, the combination still don't have overfit, is quite robust. The only problem is that we don't improve the accuracy level of Test B.
-
 
 
 ### TEST J:
@@ -443,9 +444,8 @@ In this combination we run more epochs for the alexnet of the Test B. As we can 
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image28%20-%20testJ%20loss.png?raw=true)]
 
-##### Conclussions:
-In this combination similarly to the case of test F and G we don't have convergency to the minimum of the loss
-
+##### Conclusions:
+In this combination similarly to the case of test F and G we don't have convergence to the minimum of the loss
 
 
 ### TEST K:
