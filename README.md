@@ -513,7 +513,7 @@ In future works I will try to run other networkds (resnet, densenet, googlenet) 
 
 ## DEMO
 
-In order to check the results in a real example we add a piece of code at the testing funcion where two pairs of images are shown in real time. The row of the output corresponds allways to different persons, the second pair correpond to the same person. The model tryes to predict whether te person is the same or not. So if in the first row it predicts "Not the same person" this is correct, if in the second row ir predicts "The same person" then it is correct too.
+In order to check the results in a real example we add a piece of code at the testing function where two pairs of images are shown in real time. The first row of the output corresponds always to different persons, the second pair correspond always to the same person. The model tries to predict whether the person is the same or not. So if in the first row it predicts "Not the same person" this is correct, if in the second row ir predicts "The same person" then it is correct too.
 
 ##### Example with TEST E: VGG, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0 
 
