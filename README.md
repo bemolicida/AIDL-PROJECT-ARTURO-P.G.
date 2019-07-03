@@ -1,10 +1,14 @@
 # AIDL-PROJECT-ARTURO-PALOMINO
+
 ARTIFICIAL INTELLIGENCE AND DEEP LEARNING PROJECT - UPC 
 
 
 ## Introduction
+
 Student: Arturo Palomino
+
 Team: 4
+
 Results of the final project of the Deep Learning and Artificial Intelligence post degree of the UPC talent-school.
 
 For this project different architectures have been tested in order to train a model able to recognize if two faces correspond to the same person. For this purpose we use Siamese networks that returns a classification output with a binary answer, in our case the answer is a vector of two elements. If the first element of the vector is higher than the second element then we can say that the person is the same, in other cases the person is not the same.
@@ -43,7 +47,9 @@ I split the code in 7 sections:
 
 ├─ LOOP FOR VALIDATION  ->In this section the model is calculated with validation images
 
+
 After this different tests are calculated with different parameter configurations
+
 
 ├─ LTEST 1: LR=1E-3, WD=0, N_EPOCHS=60 SIAMESE DECISION WITHOUT DATA AUGMENTATION
 
@@ -81,7 +87,9 @@ We split the code in the following sections:
 
 ├─ DOWNLOAD FILES (JUST IN CASE) -> download files from original websit in case needed
 
+
 After this different tests are calculated with different parameter configurations
+
 
 ├─ TEST A: ALEXNET, LR 1E-5 WD0 PRETRAIN=0 DATA AUGM=0 FREEZE=0
 
@@ -108,6 +116,14 @@ After this different tests are calculated with different parameter configuration
 ├─ TEST L: ALEXNET, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0
 
 ├─ TEST M: ALEXNET, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=1
+
+
+
+
+## Motivation
+
+The main motivation for this project a part from learning how to improve a model was to be able to develop an algorithm able to detect persons that walk in front of a webcam, as an enthusiast of drones and in general to aeromodels I always wanted to know if with the image sent from my drone to my movile I would be able to point to the face of a person and detect if that person is someone I know or it's a stranger. Of course another big objective but a little bit more difficult is to be able to develop an aplication for automathic piloting system that empowers the machine to make short itineraries without human intervention 
+
 
 ## Models
 
@@ -521,6 +537,18 @@ In order to check the results in a real example we add a piece of code at the te
 [3] Simonyan, Karen, and Andrew Zisserman. "Very deep convolutional networks for large-scale image recognition." ICLR 2015. 
 
 [4] Krizhevsky, Alex, Ilya Sutskever, and Geoffrey E. Hinton. "Imagenet classification with deep convolutional neural networks.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
