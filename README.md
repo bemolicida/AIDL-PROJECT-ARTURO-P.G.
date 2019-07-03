@@ -20,17 +20,19 @@ For our exercise we have tested two net configurations:
 - Siamese Decision Network with the average of two losses. A different approach in which first we feed the Siamese net with the positive (true same person pairs) cases and we obtain its loss, then we feed again the Siamese net with negative cases (non same person pairs). Then the average of both losses is calculated and used to backpropagate. In this way we ensure that exactly the 50% of the cases are of one case and 50% of the opposite, this mechanism helps the net to train better in the opinion of the author of this project.
 
 
+
+
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/image1%20-%20siamese.png?raw=true)
 
 *Image  from Amazon [Amazon](https://aws.amazon.com/es/blogs/machine-learning/combining-deep-learning-networks-gan-and-siamese-to-generate-high-quality-life-like-images/)
 
 For Each branch we choose two Pretrained Nets:
-- VGG
-- Alexnet
+- VGG [3]
+- Alexnet [4]
 
 Detail of the net structures:
 
-- VGG:
+- VGG :
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image2%20-%20vgg16%20b.png?raw=true)
 
@@ -48,7 +50,13 @@ Detail of the net structures:
 
 For the different tests we use the following parameters
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image4%20-%20parameters.PNG?raw=true)
-
+For the Net in general all the members of the group made a test with a VGG, but we have also made other tests with other CNN like Alexnet.
+The optimizer I have used is Adam, this option is faster but in the result conclusions we will explain the benefits of considering other options.
+For the Adam we consider in general 2 main learning rates 1e-3, 5e-4 but we will see that this kind of data needs in some cases lower values.
+We don't consider changing Weight decay, at initial stages of the project we decided to avoid changing it to 1 because of anomalous results.
+We consider combinate dropout in some cases to avoid overfit.
+For the pretrained parameter, we use two options, fix the pretrained weights with Imagenet [1], then finetune letting the net to learn all the weights, and another exercise where we fix the pretrained weights and then we freeze part of the convolutional layers (7 layers in the VGG, 3 in the Alexnet).
+Then we use two different architectures explained in the previous point.
 
 
 ## Codes
@@ -522,4 +530,11 @@ In order to check the results in a real example we add a piece of code at the te
 
 
 
+
+## References
+
+[1] Russakovsky, O., Deng, J., Su, H., Krause, J., Satheesh, S., Ma, S., ... & Fei-Fei, L. (2015). Imagenet large scale visual recognition challenge. arXiv preprint arXiv:1409.0575. [web]
+[2] Chopra, S., Hadsell, R., & LeCun, Y. (2005, June). Learning a similarity metric discriminatively, with application to face verification. In CVPR (1) (pp. 539-546).
+[3] Simonyan, Karen, and Andrew Zisserman. "Very deep convolutional networks for large-scale image recognition." ICLR 2015. 
+[4] Krizhevsky, Alex, Ilya Sutskever, and Geoffrey E. Hinton. "Imagenet classification with deep convolutional neural networks.
 
