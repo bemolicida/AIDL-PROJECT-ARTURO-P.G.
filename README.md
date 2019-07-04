@@ -199,7 +199,7 @@ Then I use two different architectures explained in the previous point.
 
 ## CODE  "ARTUR PALOMINO CODE1.ipynb" EXECUTIONS
 
-The following table shows the different results for the second architecture for the siamese network with two losses.
+The following table shows the different results for the first architecture for the siamese network with one loss.
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image5%20-%20results%20code1.PNG?raw=true)
 
 ### TEST 1
@@ -312,7 +312,7 @@ The configuration with the freeze and the learning rate of 1e-5 works great, I g
 
 ## CODE  "ARTUR PALOMINO CODE2.ipynb" EXECUTIONS
 
-The following table shows the different results for the first architecture, the siamese network with one loss.
+The following table shows the different results for the second architecture for the siamese network with two losses..
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image18%20-%20results%20code2.PNG?raw=true)
 
