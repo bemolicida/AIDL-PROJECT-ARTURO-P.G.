@@ -10,6 +10,7 @@ Results of the final project of the Deep Learning and Artificial Intelligence po
 For this project different architectures have been tested in order to train a model able to recognize if two faces correspond to the same person. For this purpose, I use Siamese networks that returns a classification output with a binary answer, in my case the answer is a vector of two elements or it can be one element with a dichotomic variable, depending on how the last layer of the net is configured, in this exercise I use only the first approach. If the first element of the vector is higher than the second element then I can say that the person is the same, in other cases the person is not the same.
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/image1%20-%20siamese.png?raw=true)
+
 Image1: siamese network
 *Image  from Amazon [Amazon](https://aws.amazon.com/es/blogs/machine-learning/combining-deep-learning-networks-gan-and-siamese-to-generate-high-quality-life-like-images/)
 
@@ -141,11 +142,13 @@ For my exercise I have tested two net configurations:
 - Siamese Decision Network with simple loss. traditional Siamese net where two nets are calculated in parallel, the results are concatenated, and the resulting loss is used to backpropagate.
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/ImageA%20-%20structure1.PNG?raw=true)
+
 Image2: Siamese network with 1 loss
 
 - Siamese Decision Network with the average of two losses. A different approach in which first I feed the Siamese net with the positive (true same person pairs) cases and I obtain its loss, then I feed again the Siamese net with negative cases (non same person pairs). Then the average of both losses is calculated and used to backpropagate. In this way I ensure that exactly the 50% of the cases are of one case and 50% of the opposite, this mechanism helps the net to train better in the opinion of the author of this project.
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/ImageB%20-%20structure2.PNG?raw=true)
+
 Image3: Siamese network with 2 losses
 
 
