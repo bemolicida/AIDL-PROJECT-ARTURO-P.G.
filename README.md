@@ -551,7 +551,7 @@ LR of 1e-3 normally is not a good option and 1e-5 & 5e-4 normally worked better
 
 ## Future_work
 
-In future works I will try to run other networkds (resnet, densenet, googlenet) and losses (triple loss, constractive loss). Another improve according with last class (june 27th) recomendations to arrive better to global minimum I will try to rerun the best combinations with pure SGD, as it seems to be slower but with better results.
+In future works I will try to run other networkds (resnet, densenet, googlenet) and losses (triple loss, constractive loss). Another improve according with last class (june 27th) recomendations to arrive better to global minimum I will try to rerun the best combinations with pure SGD, as it seems to be slower but with better results. Also, as you will see in the chapter 12 [12. YoloFace](#yoloface) We had the chance to test yolo faces with great results, in future works I will merge both algorithms in order to make the whole cycle of detecting a human face and then trying to decide if the person is someone that is already in a database of known persons by the system.
 
 ## DEMO
 
@@ -596,7 +596,6 @@ The it is necessary to run sequentially every section in order until the end.
 
 Please don’t hesitate to contact me directly to my email if there is any doubt: estadisticman@hotmail.com
 
-## YoloFace
 
 ## YOLOFACE
 
@@ -627,7 +626,8 @@ The next step will be to click on the "Capture" buton and the app will show the 
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/yoloface5.PNG?raw=true)
 
-Including the label "person" and the accuracy.
+Including the label "person" and the accuracy. 
+As I mention in the "future work" chapter a great exercise and a natural step forward would be to integrate this detection algorithm with the face recognition integrated.
 
 
 
