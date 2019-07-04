@@ -30,7 +30,7 @@ Image1: siamese network
 
 My first approach is to test different parameters of the optimizer, number of epochs, configuration of regularizations and nets, in order to arrive to the optimal combination that shows the best accuracy on validation and then with the chosen optimal combination make a test and check the test accuracy. In my case the best accuracy we obtained arrived to 86% and the configuration corresponds to a VGG with adam optimizer, with a learning rate of 1e-5 with weight decay of 0, pretrained but without freezing the layers and with data augmentation, for the data augmentation I used RandomHorizontalFlip, RandomAffine.
 
-## Codes Structure
+## Codes_Structure
 ```bash
 AIDL-PROJECT-ARTURO-PALOMINO
 ├── images
