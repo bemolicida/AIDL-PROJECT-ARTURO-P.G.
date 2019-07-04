@@ -233,7 +233,7 @@ Then I use two different architectures explained in the previous point.
 
 ## CODE  "ARTUR PALOMINO CODE1.ipynb" EXECUTIONS
 
-The following table shows the different results for the first architecture for the siamese network with one losse.
+The following table shows the different results for the first architecture for the siamese network with one loss.
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image5%20-%20results%20code1.PNG?raw=true)
 
