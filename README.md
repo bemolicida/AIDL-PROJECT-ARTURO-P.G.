@@ -2,11 +2,11 @@
 ARTIFICIAL INTELLIGENCE AND DEEP LEARNING PROJECT - UPC 
 
 # Index
-[1. Introduction](#1.introduction)
-[2. Codes Structure](#2.Codes_Structure)
-[3. CODE  "ARTUR PALOMINO CODE1.ipynb" STRUCTURE](#3.code__"artur_palomino_code1.ipynb"_structure)
-[4. CODE  "ARTUR PALOMINO CODE2.ipynb" STRUCTURE](#4.code__"artur_palomino_code2.ipynb"_structure)
-[5. Motivation](#5.Motivation)
+[1. Introduction](#1_introduction)
+[2. Codes Structure](#2_Codes_Structure)
+[3. CODE  "ARTUR PALOMINO CODE1.ipynb" STRUCTURE](#3_code__"artur_palomino_code1.ipynb"_structure)
+[4. CODE  "ARTUR PALOMINO CODE2.ipynb" STRUCTURE](#4_code__"artur_palomino_code2.ipynb"_structure)
+[5. Motivation](#5_Motivation)
 [6. Models](#6.Models)
 [7. Parameters](#7.Parameters)
 [8. CODE  "ARTUR PALOMINO CODE1.ipynb" executions](#8.code__"artur_palomino_code1.ipynb"_executions)
@@ -593,5 +593,6 @@ Please don’t hesitate to contact me directly to my email if there is any doubt
 [3] Simonyan, Karen, and Andrew Zisserman. "Very deep convolutional networks for large-scale image recognition." ICLR 2015. 
 
 [4] Krizhevsky, Alex, Ilya Sutskever, and Geoffrey E. Hinton. "Imagenet classification with deep convolutional neural networks.
+
 
 
