@@ -1,23 +1,21 @@
 # AIDL-PROJECT-ARTURO-PALOMINO
-
 ARTIFICIAL INTELLIGENCE AND DEEP LEARNING PROJECT - UPC 
 
 
 ## Introduction
-
 Student: Arturo Palomino
-
 Team: 4
-
 Results of the final project of the Deep Learning and Artificial Intelligence post degree of the UPC talent-school.
 
-For this project different architectures have been tested in order to train a model able to recognize if two faces correspond to the same person. For this purpose we use Siamese networks that returns a classification output with a binary answer, in our case the answer is a vector of two elements. If the first element of the vector is higher than the second element then we can say that the person is the same, in other cases the person is not the same.
+For this project different architectures have been tested in order to train a model able to recognize if two faces correspond to the same person. For this purpose, I use Siamese networks that returns a classification output with a binary answer, in my case the answer is a vector of two elements or it can be one element with a dichotomic variable, depending on how the last layer of the net is configured, in this exercise I use only the first approach. If the first element of the vector is higher than the second element then I can say that the person is the same, in other cases the person is not the same.
 
-Our first approach is to test different parameters of the optimizer, number of epochs, configuration of regularizations, and nets in order to arrive to the optimal combination that shows the best accuracy on validation and then with the chosen optimal combination make a test and check the test accuracy.
+![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/image1%20-%20siamese.png?raw=true)
+Image1: siamese network
+*Image  from Amazon [Amazon](https://aws.amazon.com/es/blogs/machine-learning/combining-deep-learning-networks-gan-and-siamese-to-generate-high-quality-life-like-images/)
 
+My first approach is to test different parameters of the optimizer, number of epochs, configuration of regularizations and nets, in order to arrive to the optimal combination that shows the best accuracy on validation and then with the chosen optimal combination make a test and check the test accuracy. In my case the best accuracy we obtained arrived to 86% and the configuration corresponds to a VGG with adam optimizer, with a learning rate of 1e-5 with weight decay of 0, pretrained but without freezing the layers and with data augmentation, for the data augmentation I used RandomHorizontalFlip, RandomAffine.
 
 ## Codes Structure
-
 ```bash
 AIDL-PROJECT-ARTURO-PALOMINO
 ├── images
@@ -30,8 +28,7 @@ AIDL-PROJECT-ARTURO-PALOMINO
 └── README.md
 ```
 
-
-I mainly use two colab codes:
+I mainly use two colab codes that the reader can check and see the different results already executed step by step. The two colab codes are related to the two architectures I used:
 
 -One for the Siamesse Decision Network with single loss: "ARTUR PALOMINO CODE1.ipynb"
 
@@ -54,14 +51,14 @@ I split the code in 7 sections:
 
 ├─  CREATING SIAMESE NETWORKS(VGG...) -> I have a VGG decision network and VGG linear network (that last not used)
 
-├─ UTILITIES FOR METRICS OF OUR MODELS  -> With this section we obtain the validation and training accuracy and losseS
+├─ UTILITIES FOR METRICS OF OUR MODELS  -> With this section I obtain the validation and training accuracy and losseS
 
-├─ LOOP FOR TRAINING  -> WIn this section we create the model, calculate the loss and backpropagate
+├─ LOOP FOR TRAINING  -> In this section I create the model, calculate the loss and backpropagate
 
 ├─ LOOP FOR VALIDATION  ->In this section the model is calculated with validation images
 
 
-After this different tests are calculated with different parameter configurations
+After this, different test are calculated with different parameter configurations, the reader can read in the colab the last execution done by me and the results.
 
 
 ├─ LTEST 1: LR=1E-3, WD=0, N_EPOCHS=60 SIAMESE DECISION WITHOUT DATA AUGMENTATION
@@ -82,26 +79,26 @@ After this different tests are calculated with different parameter configuration
 
 This code is for testing different configurations for a VGG and an Alexnet with two losses.
 
-We split the code in the following sections:
+I split the code in the following sections:
 
 ├─ MOUNTING DRIVE -> I mount google drive CFPW images that were previously uploaded 
 
-├─ IMPORTING PACKAGES ->  we import different packages needed for the execution
+├─ IMPORTING PACKAGES ->  I import different packages needed for the execution
 
 ├─ CREATING DOWNLOADER CLASS -> The downloader class is used to feed the net with CFPW images
 
-├─ CREATING MODELS ->  We have a VGG decision network and Alexnet with two losses.
+├─ CREATING MODELS ->  I have a VGG decision network and Alexnet with two losses.
 
-├─ TRAIN ->  training function
+├─ TRAIN ->  Training function
 
-├─ TEST -> test function
+├─ TEST -> Test function
 
-├─ MAIN -> main function
+├─ MAIN -> Main function
 
-├─ DOWNLOAD FILES (JUST IN CASE) -> download files from original websit in case needed
+├─ DOWNLOAD FILES (JUST IN CASE) -> Download files from original website in case needed
 
 
-After this different tests are calculated with different parameter configurations
+After this, different tests are calculated with different parameter configurations. The reader can check the last executions and the results obtained by me step by step:
 
 
 ├─ TEST A: ALEXNET, LR 1E-5 WD0 PRETRAIN=0 DATA AUGM=0 FREEZE=0
@@ -135,24 +132,25 @@ After this different tests are calculated with different parameter configuration
 
 ## Motivation
 
-The main motivation for this project a part from learning how to improve a model was to be able to develop an algorithm able to detect persons that walk in front of a webcam, as an enthusiast of drones and in general to aeromodels I always wanted to know if with the image sent from my drone to my movile I would be able to point to the face of a person and detect if that person is someone I know or it's a stranger. Of course another big objective but a little bit more difficult is to be able to develop an aplication for automathic piloting system that empowers the machine to make short itineraries without human intervention 
-
+The main motivation for this project a part from learning how to improve a model was to be able to develop an algorithm able to detect persons that walk in front of a webcam, as an enthusiast of drones and in general to aeromodels I always wanted to know if with the image sent from my drone to my movile I would be able to point to the face of a person and detect if that person is someone I know or it's a stranger. Of course another big objective but a little bit more difficult is to be able to develop an application for automatic piloting system that empowers the machine to make short itineraries without human intervention. At that sense recognizing simple objects is the first step of a long road.
 
 ## Models
 
 
-For our exercise we have tested two net configurations:
-- Siamese Decision Network with simple loss. traditional Siamese net where two nets are calculated in parallel, the results are concatenated, and the resulting loss is used to backpropagate
-- Siamese Decision Network with the average of two losses. A different approach in which first we feed the Siamese net with the positive (true same person pairs) cases and we obtain its loss, then we feed again the Siamese net with negative cases (non same person pairs). Then the average of both losses is calculated and used to backpropagate. In this way we ensure that exactly the 50% of the cases are of one case and 50% of the opposite, this mechanism helps the net to train better in the opinion of the author of this project.
+For my exercise I have tested two net configurations:
+- Siamese Decision Network with simple loss. traditional Siamese net where two nets are calculated in parallel, the results are concatenated, and the resulting loss is used to backpropagate.
+
+![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/ImageA%20-%20structure1.PNG?raw=true)
+Image2: Siamese network with 1 loss
+
+- Siamese Decision Network with the average of two losses. A different approach in which first I feed the Siamese net with the positive (true same person pairs) cases and I obtain its loss, then I feed again the Siamese net with negative cases (non same person pairs). Then the average of both losses is calculated and used to backpropagate. In this way I ensure that exactly the 50% of the cases are of one case and 50% of the opposite, this mechanism helps the net to train better in the opinion of the author of this project.
+
+![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/ImageB%20-%20structure2.PNG?raw=true)
+Image3: Siamese network with 2 losses
 
 
 
-
-![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/image1%20-%20siamese.png?raw=true)
-
-*Image  from Amazon [Amazon](https://aws.amazon.com/es/blogs/machine-learning/combining-deep-learning-networks-gan-and-siamese-to-generate-high-quality-life-like-images/)
-
-For Each branch we choose two Pretrained Nets:
+For Each branch I choose two Pretrained Nets:
 - VGG [3]
 - Alexnet [4]
 
@@ -174,24 +172,24 @@ Detail of the net structures:
 ## Parameters
 
 
-For the different tests we use the following parameters
+For the different tests I use the following parameters
 
 
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image4%20-%20parameters.PNG?raw=true)
-For the Net in general all the members of the group made a test with a VGG, but we have also made other tests with other CNN like Alexnet.
+For the Net in general all the members of the group made a test with a VGG, but I have also made other tests with other CNN like Alexnet.
 
-The optimizer I have used is Adam, this option is faster but in the result conclusions we will explain the benefits of considering other options.
+The optimizer I have used is Adam, this option is faster but in the result conclusions I will explain the benefits of considering other options.
 
-For the Adam we consider in general 2 main learning rates 1e-3, 5e-4 but we will see that this kind of data needs in some cases lower values.
+For the Adam I consider in general 2 main learning rates 1e-3, 5e-4 but I will see that this kind of data needs in some cases lower values.
 
-We don't consider changing Weight decay, at initial stages of the project we decided to avoid changing it to 1 because of anomalous results.
+We don't consider changing Weight decay, at initial stages of the project I decided to avoid changing it to 1 because of anomalous results.
 
 We consider combinate dropout in some cases to avoid overfit.
 
-For the pretrained parameter, we use two options, fix the pretrained weights with Imagenet [1], then finetune letting the net to learn all the weights, and another exercise where we fix the pretrained weights and then we freeze part of the convolutional layers (7 layers in the VGG, 3 in the Alexnet).
+For the pretrained parameter, I use two options, fix the pretrained weights with Imagenet [1], then finetune letting the net to learn all the weights, and another exercise where I fix the pretrained weights and then I freeze part of the convolutional layers (7 layers in the VGG, 3 in the Alexnet).
 
-Then we use two different architectures explained in the previous point.
+Then I use two different architectures explained in the previous point.
 
 
 
@@ -216,7 +214,7 @@ The following table shows the different results for the second architecture for 
 [![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image7%20-%20test1%20accuracy.png?raw=true)]()
 
 ##### Conclussions:
-The configuration presents overfit, we can see a separation between validation and training loses and a convexity at 30 epochs
+The configuration presents overfit, I can see a separation between validation and training loses and a convexity at 30 epochs
 
 ### TEST 2
 
@@ -233,7 +231,7 @@ The configuration presents overfit, we can see a separation between validation a
 [![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image9%20-%20test2%20accuracy.png?raw=true)]()
 
 ##### Conclussions:
-The configuration now doesn't present overfit, we have  a decent Validation accuracy and a nice test accuracy of 80%. As we will see in further combinations this one is the best candidate for a VGG with simple loss.
+The configuration now doesn't present overfit, I have  a decent Validation accuracy and a nice test accuracy of 80%. As I will see in further combinations this one is the best candidate for a VGG with simple loss.
 
 ### TEST 3
 
@@ -250,7 +248,7 @@ The configuration now doesn't present overfit, we have  a decent Validation accu
 [![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image11%20-%20test3%20accuracy.png?raw=true)]()
 
 ##### Conclusions:
-The configuration presents a nice validation accuracy and no overfit, by the other hand we can see that the accuracy is lower than previous test for testing sample, that lead us to prefer test2 for being more stable in that sense.
+The configuration presents a nice validation accuracy and no overfit, by the other hand I can see that the accuracy is lower than previous test for testing sample, that lead us to prefer test2 for being more stable in that sense.
 
 ### TEST 4
 
@@ -268,7 +266,7 @@ The configuration presents a nice validation accuracy and no overfit, by the oth
 [![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image13%20-%20test4%20accuracy.png?raw=true)]()
 
 ##### Conclusions:
-In this execution we add freeze to the first 7 convolutional layers. The configuration presents strange values for losses and accuracies this is probably due to the fact that the learning rate is too big and the minimum loss is at a certain point that is inaccessible with an interval of 1e-3. We try in the next test to decrease this value to 5e-4 in order to verify our hypothesis.
+In this execution I add freeze to the first 7 convolutional layers. The configuration presents strange values for losses and accuracies this is probably due to the fact that the learning rate is too big and the minimum loss is at a certain point that is inaccessible with an interval of 1e-3. I try in the next test to decrease this value to 5e-4 in order to verify my hypothesis.
 
 
 ### TEST 5:
@@ -286,7 +284,7 @@ In this execution we add freeze to the first 7 convolutional layers. The configu
 [![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image15%20-%20test5%20accuracy.png?raw=true)]()
 
 ##### Conclusions:
-The configuration with this learning rate solves our previous test problem and now we arrive to the minimum loss easily. The bad point is that we continue having overfit.
+The configuration with this learning rate solves my previous test problem and now I arrive to the minimum loss easily. The bad point is that I continue having overfit.
 
 
 ### TEST 6:
@@ -305,7 +303,7 @@ The configuration with this learning rate solves our previous test problem and n
 [![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image17%20-%20test6%20accuracy.png?raw=true)]()
 
 ##### Conclusions:
-The configuration with the freeze and the learning rate of 1e-5 works great, we get an validation accuracy of 83 and a testing accuracy of 83 too. The problem that persists is the overfit that have been reflected in all tests with freeze that we have done.
+The configuration with the freeze and the learning rate of 1e-5 works great, I get a validation accuracy of 83 and a testing accuracy of 83 too. The problem that persists is the overfit that have been reflected in all tests with freeze that I have done.
 
 
 
@@ -327,7 +325,7 @@ The following table shows the different results for the first architecture, the 
 [![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image19%20-%20testA%20loss.png?raw=true)]()
 
 ##### Conclussions:
-The configuration is not optimal as it shows overfit. The accuracy is nice and we can see the optimal accuracy is achieved fast, in less than 10 epochs. Another interesting thing is that this net trains 60 epochs in less than 60 minutes while VGG lasts 4 times more.
+The configuration is not optimal as it shows overfit. The accuracy is nice and I can see the optimal accuracy is achieved fast, in less than 10 epochs. Another interesting thing is that this net trains 60 epochs in less than 60 minutes while VGG lasts 4 times more.
 
 
 ### TEST B:
@@ -342,7 +340,7 @@ The configuration is not optimal as it shows overfit. The accuracy is nice and w
 [![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image20%20-%20testA%20loss.png?raw=true)]()
 
 ##### Conclusions:
-The configuration doesn't show overfit moreover we arrive to an outstanding validation accuracy of 84 and a test accuracy of 82, this is by far the best combination until that moment. This is in fact one of the best options for Alexnet in this document.
+The configuration doesn't show overfit moreover I arrive to an outstanding validation accuracy of 84 and a test accuracy of 82, this is by far the best combination until that moment. This is in fact one of the best options for Alexnet in this document.
 
 ### TEST C:
 
@@ -371,7 +369,7 @@ The configuration using a VGG shows worst results than the Alexnet in the same c
 [![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image22%20-%20testD%20loss.png?raw=true)]()
 
 ##### Conclusions:
-The configuration using a VGG and pretrain we obtain a nice validation accuracy of 84 and a test accuracy of 83, better than the last model except for the fact that this one has overfit.
+The configuration using a VGG and pretrain I obtain a nice validation accuracy of 84 and a test accuracy of 83, better than the last model except for the fact that this one has overfit.
 
 ### TEST E:
 
@@ -401,7 +399,7 @@ The configuration shows the best validation accuracy of the whole set of combina
 (No image)
 
 ##### Conclusions:
-In order to test the learning rate 1e-3 we run again our last model, the results are the worst until the moment, the problem is that the accuracy never improves from 50%, the reason is that it's not possible for the model to arrive to the minimum loss because the interval at every step is too big and the minimum is always in the middle of the last two steps.
+In order to test the learning rate 1e-3 I run again my last model, the results are the worst until the moment, the problem is that the accuracy never improves from 50%, the reason is that it's not possible for the model to arrive to the minimum loss because the interval at every step is too big and the minimum is always in the middle of the last two steps.
 
 
 ### TEST G:
@@ -417,7 +415,7 @@ In order to test the learning rate 1e-3 we run again our last model, the results
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image25%20-%20testG%20loss.png?raw=true)]
 
 ##### Conclusions:
-In order to test again the model, the learning rate is fixed at 5e-4. We find exactly the same scenario as in testG.
+In order to test again the model, the learning rate is fixed at 5e-4. I find exactly the same scenario as in testG.
 
 ### TEST H:
 
@@ -432,7 +430,7 @@ In order to test again the model, the learning rate is fixed at 5e-4. We find ex
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image26%20-%20testH%20loss.png?raw=true)]
 
 ##### Conclusions:
-In this combination we include the option freeze, freezing 7 convolutions of the pretrained layers on the VGG. The test accuracy shows the best results of the table, the problem again is the overfit
+In this combination I include the option freeze, freezing 7 convolutions of the pretrained layers on the VGG. The test accuracy shows the best results of the table, the problem again is the overfit
 
 ### TEST I:
 
@@ -447,7 +445,7 @@ In this combination we include the option freeze, freezing 7 convolutions of the
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image27%20-%20testI%20loss.png?raw=true)]
 
 ##### Conclusions:
-In this combination we run more epochs for the alexnet of the Test B. As we can see, the combination still don't have overfit, is quite robust. The only problem is that we don't improve the accuracy level of Test B.
+In this combination I run more epochs for the alexnet of the Test B. As I can see, the combination still don't have overfit, is quite robust. The only problem is that I don't improve the accuracy level of Test B.
 
 
 ### TEST J:
@@ -463,7 +461,7 @@ In this combination we run more epochs for the alexnet of the Test B. As we can 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image28%20-%20testJ%20loss.png?raw=true)]
 
 ##### Conclusions:
-In this combination similarly to the case of test F and G we don't have convergence to the minimum of the loss
+In this combination similarly to the case of test F and G I don't have convergence to the minimum of the loss
 
 
 ### TEST K:
@@ -479,7 +477,7 @@ In this combination similarly to the case of test F and G we don't have converge
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image29%20-%20testk%20loss.png?raw=true)
 
 ##### Conclussions:
-In this combination similarly to the case of test F and G we don't have convergency to the minimum of the loss
+In this combination similarly to the case of test F and G I don't have convergency to the minimum of the loss
 
 ### TEST L:
 
@@ -494,7 +492,7 @@ In this combination similarly to the case of test F and G we don't have converge
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image30%20-%20testL%20loss.png?raw=true)
 
 ##### Conclussions:
-In this combination we have a nice accuracy of test and validation data but still has overfit
+In this combination I have a nice accuracy of test and validation data but still has overfit
 
 ### TEST M:
 
@@ -509,7 +507,7 @@ In this combination we have a nice accuracy of test and validation data but stil
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image31%20-%20testM%20loss.png?raw=true)
 
 ##### Conclussions:
-In this combination, freezing 3 layers of the convolutions we have poor accuracies and still shows overfit
+In this combination, freezing 3 layers of the convolutions I have poor accuracies and still shows overfit
 
 ## GENERAL CONCLUSSIONS
 
@@ -531,7 +529,7 @@ In future works I will try to run other networkds (resnet, densenet, googlenet) 
 
 ## DEMO
 
-In order to check the results in a real example we add a piece of code at the testing function where two pairs of images are shown in real time. The first row of the output corresponds always to different persons, the second pair correspond always to the same person. The model tries to predict whether the person is the same or not. So if in the first row it predicts "Not the same person" this is correct, if in the second row ir predicts "The same person" then it is correct too.
+In order to check the results in a real example I add a piece of code at the testing function where two pairs of images are shown in real time. The first row of the output corresponds always to different persons, the second pair correspond always to the same person. The model tries to predict whether the person is the same or not. So if in the first row it predicts "Not the same person" this is correct, if in the second row ir predicts "The same person" then it is correct too.
 
 ##### Example with TEST E: VGG, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0 
 
@@ -550,19 +548,6 @@ In order to check the results in a real example we add a piece of code at the te
 [3] Simonyan, Karen, and Andrew Zisserman. "Very deep convolutional networks for large-scale image recognition." ICLR 2015. 
 
 [4] Krizhevsky, Alex, Ilya Sutskever, and Geoffrey E. Hinton. "Imagenet classification with deep convolutional neural networks.
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
