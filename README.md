@@ -2,25 +2,25 @@
 ARTIFICIAL INTELLIGENCE AND DEEP LEARNING PROJECT - UPC 
 
 # Index
-[1. Introduction](#introduction)
+[1.  Introduction](#introduction)
 
-[2. Codes Structure](#codes_structure) 
+[2.  Codes Structure](#codes_structure) 
 
-[3. Motivation](#motivation)
+[3.  Motivation](#motivation)
 
-[4. Models](#models)
+[4.  Models](#models)
 
-[5. Parameters](#parameters)
+[5.  Parameters](#parameters)
 
-[6. Results](#results) 
+[6.  Results](#results) 
 
-[8.General conclusions](#general_conclusions)
+[8.  General conclusions](#general_conclusions)
 
-[9.Future work](#future_work)
+[9.  Future work](#future_work)
 
-[10.Demo](#demo)
+[10. Demo](#demo)
 
-[11.Instructions for Demo](#instructions_for_demo)
+[11. Instructions for Demo](#instructions_for_demo)
 
 [References](#references)
 
