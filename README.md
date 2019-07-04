@@ -1,8 +1,23 @@
 # AIDL-PROJECT-ARTURO-PALOMINO
 ARTIFICIAL INTELLIGENCE AND DEEP LEARNING PROJECT - UPC 
 
+# Index
+[1. Introduction](#1.introduction)
+[2. Codes Structure](#2.Codes_Structure)
+[3. CODE  "ARTUR PALOMINO CODE1.ipynb" STRUCTURE](#3.code__"artur_palomino_code1.ipynb"_structure)
+[4. CODE  "ARTUR PALOMINO CODE2.ipynb" STRUCTURE](#4.code__"artur_palomino_code2.ipynb"_structure)
+[5. Motivation](#5.Motivation)
+[6. Models](#6.Models)
+[7. Parameters](#7.Parameters)
+[8. CODE  "ARTUR PALOMINO CODE1.ipynb" executions](#8.code__"artur_palomino_code1.ipynb"_executions)
+[9. Code  "ARTUR PALOMINO CODE2.ipynb" executions](#9.code__"artur_palomino_code2.ipynb"_executions)
+[10.General conclussions](#10.general_conclussions)
+[11.Future work](#11.future_work)
+[12.Demo](#12.demo)
+[13.Instructions for Demo](#13.instructions_for_demo)
+[References](#references)
 
-## Introduction
+## 1.Introduction
 Student: Arturo Palomino
 Team: 4
 Results of the final project of the Deep Learning and Artificial Intelligence post degree of the UPC talent-school.
@@ -10,14 +25,12 @@ Results of the final project of the Deep Learning and Artificial Intelligence po
 For this project different architectures have been tested in order to train a model able to recognize if two faces correspond to the same person. For this purpose, I use Siamese networks that returns a classification output with a binary answer, in my case the answer is a vector of two elements or it can be one element with a dichotomic variable, depending on how the last layer of the net is configured, in this exercise I use only the first approach. If the first element of the vector is higher than the second element then I can say that the person is the same, in other cases the person is not the same.
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/image1%20-%20siamese.png?raw=true)
-
 Image1: siamese network
-
 *Image  from Amazon [Amazon](https://aws.amazon.com/es/blogs/machine-learning/combining-deep-learning-networks-gan-and-siamese-to-generate-high-quality-life-like-images/)
 
 My first approach is to test different parameters of the optimizer, number of epochs, configuration of regularizations and nets, in order to arrive to the optimal combination that shows the best accuracy on validation and then with the chosen optimal combination make a test and check the test accuracy. In my case the best accuracy we obtained arrived to 86% and the configuration corresponds to a VGG with adam optimizer, with a learning rate of 1e-5 with weight decay of 0, pretrained but without freezing the layers and with data augmentation, for the data augmentation I used RandomHorizontalFlip, RandomAffine.
 
-## Codes Structure
+## 2.Codes Structure
 ```bash
 AIDL-PROJECT-ARTURO-PALOMINO
 ├── images
@@ -38,7 +51,7 @@ I mainly use two colab codes that the reader can check and see the different res
 -One for the Siamesse Decision Network with two losses: "ARTUR PALOMINO CODE2.ipynb"
 
 
-## CODE  "ARTUR PALOMINO CODE1.ipynb" STRUCTURE
+## 3.CODE  "ARTUR PALOMINO CODE1.ipynb" STRUCTURE
 
 This code is for testing different configurations for a VGG with single loss.
 
@@ -78,7 +91,7 @@ After this, different test are calculated with different parameter configuration
 
 
 
-## CODE  "ARTUR PALOMINO CODE2.ipynb" STRUCTURE
+## 4.CODE  "ARTUR PALOMINO CODE2.ipynb" STRUCTURE
 
 This code is for testing different configurations for a VGG and an Alexnet with two losses.
 
@@ -133,24 +146,22 @@ After this, different tests are calculated with different parameter configuratio
 
 
 
-## Motivation
+## 5.Motivation
 
 The main motivation for this project a part from learning how to improve a model was to be able to develop an algorithm able to detect persons that walk in front of a webcam, as an enthusiast of drones and in general to aeromodels I always wanted to know if with the image sent from my drone to my movile I would be able to point to the face of a person and detect if that person is someone I know or it's a stranger. Of course another big objective but a little bit more difficult is to be able to develop an application for automatic piloting system that empowers the machine to make short itineraries without human intervention. At that sense recognizing simple objects is the first step of a long road.
 
-## Models
+## 6.Models
 
 
 For my exercise I have tested two net configurations:
 - Siamese Decision Network with simple loss. traditional Siamese net where two nets are calculated in parallel, the results are concatenated, and the resulting loss is used to backpropagate.
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/ImageA%20-%20structure1.PNG?raw=true)
-
 Image2: Siamese network with 1 loss
 
 - Siamese Decision Network with the average of two losses. A different approach in which first I feed the Siamese net with the positive (true same person pairs) cases and I obtain its loss, then I feed again the Siamese net with negative cases (non same person pairs). Then the average of both losses is calculated and used to backpropagate. In this way I ensure that exactly the 50% of the cases are of one case and 50% of the opposite, this mechanism helps the net to train better in the opinion of the author of this project.
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/ImageB%20-%20structure2.PNG?raw=true)
-
 Image3: Siamese network with 2 losses
 
 
@@ -174,7 +185,7 @@ Detail of the net structures:
 
 
 
-## Parameters
+## 7.Parameters
 
 
 For the different tests I use the following parameters
@@ -199,7 +210,7 @@ Then I use two different architectures explained in the previous point.
 
 
 
-## CODE  "ARTUR PALOMINO CODE1.ipynb" EXECUTIONS
+## 8.CODE  "ARTUR PALOMINO CODE1.ipynb" EXECUTIONS
 
 The following table shows the different results for the second architecture for the siamese network with two losses.
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image5%20-%20results%20code1.PNG?raw=true)
@@ -312,7 +323,7 @@ The configuration with the freeze and the learning rate of 1e-5 works great, I g
 
 
 
-## CODE  "ARTUR PALOMINO CODE2.ipynb" EXECUTIONS
+## 9.CODE  "ARTUR PALOMINO CODE2.ipynb" EXECUTIONS
 
 The following table shows the different results for the first architecture, the siamese network with one loss.
 
@@ -514,7 +525,7 @@ In this combination I have a nice accuracy of test and validation data but still
 ##### Conclussions:
 In this combination, freezing 3 layers of the convolutions I have poor accuracies and still shows overfit
 
-## GENERAL CONCLUSSIONS
+## 10.GENERAL CONCLUSSIONS
 
 VGG achieves better validation accuracy but generally with overfit.
 
@@ -528,11 +539,11 @@ Alexnet can train in 1 hour 60 epochs while VGG needs 4 hours for the same numbe
 LR of 1e-3 normally is not a good option and 1e-5 & 5e-4 normally worked better
 
 
-## FUTURE WORK
+## 11.FUTURE WORK
 
 In future works I will try to run other networkds (resnet, densenet, googlenet) and losses (triple loss, constractive loss). Another improve according with last class (june 27th) recomendations to arrive better to global minimum I will try to rerun the best combinations with pure SGD, as it seems to be slower but with better results.
 
-## DEMO
+## 12.DEMO
 
 In order to check the results in a real example I add a piece of code at the testing function where two pairs of images are shown in real time. The first row of the output corresponds always to different persons, the second pair correspond always to the same person. The model tries to predict whether the person is the same or not. So if in the first row it predicts "Not the same person" this is correct, if in the second row ir predicts "The same person" then it is correct too.
 
@@ -540,7 +551,7 @@ In order to check the results in a real example I add a piece of code at the tes
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/DEMO.PNG?raw=true)
 
-## Instructions for Demo
+## 13.Instructions for Demo
 
 In order to execute the demo the reader will need to install the packages in the requirement file found inside the demo path with the following instruction:
 ```
@@ -560,14 +571,14 @@ AIDL-PROJECT-ARTURO-PALOMINO
 │   ───├── Artur_weights_siamese_epoch 59__modelAlexnet_amp 1_pretr 0_lr 1e-05_wd 0.pt
 │   ───├── Pair_list_F
 │   ───├── Pair_list_P
-
 │   ───├── Artur_test.pt
 ```
 The reader will need to change the paths at the second section of the code “Packages and other variables”. This is an example of how it’s in my current configuration:
-
+```
 rutaDataColab="gdrive/My Drive/2019_AIDL_TEAM4/colab_face_detection_siamesa/Presentacio/Demo/Weights_here/"
 rutaCodeColab="gdrive/My Drive/2019_AIDL_TEAM4/colab_face_detection_siamesa/Presentacio/Demo/"
 rutaWeightsColab="gdrive/My Drive/2019_AIDL_TEAM4/colab_face_detection_siamesa/Presentacio/Demo/Weights_here/"
+```
 
 The it is necessary to run sequentially every section in order until the end.
 
@@ -582,6 +593,5 @@ Please don’t hesitate to contact me directly to my email if there is any doubt
 [3] Simonyan, Karen, and Andrew Zisserman. "Very deep convolutional networks for large-scale image recognition." ICLR 2015. 
 
 [4] Krizhevsky, Alex, Ilya Sutskever, and Geoffrey E. Hinton. "Imagenet classification with deep convolutional neural networks.
-
 
 
