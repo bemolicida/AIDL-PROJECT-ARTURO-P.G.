@@ -66,6 +66,8 @@ I split the code in 7 sections:
 
 
 ##### ARTUR PALOMINO CODE1.ipynb
+```
+
 ├─  MOUNTING DRIVE   -> I mount google drive CFPW images that were previously uploaded 
 
 ├─  IMPORTING PACKAGES   -> I import different packages needed for the execution
@@ -79,10 +81,10 @@ I split the code in 7 sections:
 ├─ LOOP FOR TRAINING  -> In this section I create the model, calculate the loss and backpropagate
 
 ├─ LOOP FOR VALIDATION  ->In this section the model is calculated with validation images
-
+```
 
 After this, different test are calculated with different parameter configurations, the reader can read in the colab the last execution done by me and the results.
-
+```
 
 ├─ LTEST 1: LR=1E-3, WD=0, N_EPOCHS=60 SIAMESE DECISION WITHOUT DATA AUGMENTATION
 
@@ -96,7 +98,7 @@ After this, different test are calculated with different parameter configuration
 
 ├─ LTEST 6: LR=1E-5, WD=0, N_EPOCHS=60 SIAMESE DECISION WITHOUT DATA AUGMENTATION WITH FREEZE
 
-
+```
 
 ### CODE  "ARTUR PALOMINO CODE2.ipynb" STRUCTURE
 
@@ -104,6 +106,7 @@ This code is for testing different configurations for a VGG and an Alexnet with 
 
 I split the code in the following sections:
 
+```
 ├─ MOUNTING DRIVE -> I mount google drive CFPW images that were previously uploaded 
 
 ├─ IMPORTING PACKAGES ->  I import different packages needed for the execution
@@ -119,11 +122,11 @@ I split the code in the following sections:
 ├─ MAIN -> Main function
 
 ├─ DOWNLOAD FILES (JUST IN CASE) -> Download files from original website in case needed
-
+```
 
 After this, different tests are calculated with different parameter configurations. The reader can check the last executions and the results obtained by me step by step:
 
-
+```
 ├─ TEST A: ALEXNET, LR 1E-5 WD0 PRETRAIN=0 DATA AUGM=0 FREEZE=0
 
 ├─ TEST B: ALEXNET, LR 1E-5 WD0 PRETRAIN=0 DATA AUGM=1 FREEZE=0
@@ -150,7 +153,7 @@ After this, different tests are calculated with different parameter configuratio
 
 ├─ TEST M: ALEXNET, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=1
 
-
+```
 
 
 ## Motivation
