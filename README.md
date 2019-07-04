@@ -37,7 +37,7 @@ Image1: siamese network
 
 My first approach is to test different parameters of the optimizer, number of epochs, configuration of regularizations and nets, in order to arrive to the optimal combination that shows the best accuracy on validation and then with the chosen optimal combination make a test and check the test accuracy. In my case the best accuracy we obtained arrived to 86% and the configuration corresponds to a VGG with adam optimizer, with a learning rate of 1e-5 with weight decay of 0, pretrained but without freezing the layers and with data augmentation, for the data augmentation I used RandomHorizontalFlip, RandomAffine.
 
-## Codes Structure
+## Codes_Structure
 ```bash
 AIDL-PROJECT-ARTURO-PALOMINO
 ├── images
@@ -215,7 +215,7 @@ For the pretrained parameter, I use two options, fix the pretrained weights with
 Then I use two different architectures explained in the previous point.
 
 
-## RESULTS
+## Results
 
 ## CODE  "ARTUR PALOMINO CODE1.ipynb" EXECUTIONS
 
@@ -532,7 +532,7 @@ In this combination I have a nice accuracy of test and validation data but still
 ##### Conclussions:
 In this combination, freezing 3 layers of the convolutions I have poor accuracies and still shows overfit
 
-## General conclusions
+## General_conclusions
 
 VGG achieves better validation accuracy but generally with overfit.
 
@@ -546,7 +546,7 @@ Alexnet can train in 1 hour 60 epochs while VGG needs 4 hours for the same numbe
 LR of 1e-3 normally is not a good option and 1e-5 & 5e-4 normally worked better
 
 
-## Future work
+## Future_work
 
 In future works I will try to run other networkds (resnet, densenet, googlenet) and losses (triple loss, constractive loss). Another improve according with last class (june 27th) recomendations to arrive better to global minimum I will try to rerun the best combinations with pure SGD, as it seems to be slower but with better results.
 
@@ -558,7 +558,7 @@ In order to check the results in a real example I add a piece of code at the tes
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/DEMO.PNG?raw=true)
 
-## Instructions for Demo
+## Instructions_for_Demo
 
 In order to execute the demo the reader will need to install the packages in the requirement file found inside the demo path with the following instruction:
 ```
