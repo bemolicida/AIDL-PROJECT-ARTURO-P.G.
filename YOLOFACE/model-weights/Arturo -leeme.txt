@@ -1,0 +1,3 @@
+download weights yolov3-wider_1600.weights and put it in this folder
+
+if you already find yolov3-wider_16000.txt then rename it as:yolov3-wider_16000.weights
