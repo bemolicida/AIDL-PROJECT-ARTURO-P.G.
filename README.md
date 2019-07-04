@@ -2,9 +2,9 @@
 ARTIFICIAL INTELLIGENCE AND DEEP LEARNING PROJECT - UPC 
 
 # Index
-[1. Introduction](#1_introduction)
-[2. Codes Structure](#2_Codes_Structure)
-[3. CODE  "ARTUR PALOMINO CODE1.ipynb" STRUCTURE](#3_code__"artur_palomino_code1.ipynb"_structure)
+[1. Introduction](#introduction)
+[2. Codes Structure](#Codes_Structure)
+[3. CODE  "ARTUR PALOMINO CODE1.ipynb" STRUCTURE](#code__"artur_palomino_code1.ipynb"_structure)
 [4. CODE  "ARTUR PALOMINO CODE2.ipynb" STRUCTURE](#4_code__"artur_palomino_code2.ipynb"_structure)
 [5. Motivation](#5_Motivation)
 [6. Models](#6.Models)
@@ -17,7 +17,7 @@ ARTIFICIAL INTELLIGENCE AND DEEP LEARNING PROJECT - UPC
 [13.Instructions for Demo](#13.instructions_for_demo)
 [References](#references)
 
-## 1 Introduction
+## Introduction
 Student: Arturo Palomino
 Team: 4
 Results of the final project of the Deep Learning and Artificial Intelligence post degree of the UPC talent-school.
@@ -30,7 +30,7 @@ Image1: siamese network
 
 My first approach is to test different parameters of the optimizer, number of epochs, configuration of regularizations and nets, in order to arrive to the optimal combination that shows the best accuracy on validation and then with the chosen optimal combination make a test and check the test accuracy. In my case the best accuracy we obtained arrived to 86% and the configuration corresponds to a VGG with adam optimizer, with a learning rate of 1e-5 with weight decay of 0, pretrained but without freezing the layers and with data augmentation, for the data augmentation I used RandomHorizontalFlip, RandomAffine.
 
-## 2 Codes Structure
+## Codes Structure
 ```bash
 AIDL-PROJECT-ARTURO-PALOMINO
 ├── images
@@ -51,7 +51,7 @@ I mainly use two colab codes that the reader can check and see the different res
 -One for the Siamesse Decision Network with two losses: "ARTUR PALOMINO CODE2.ipynb"
 
 
-## 3 CODE  "ARTUR PALOMINO CODE1.ipynb" STRUCTURE
+## CODE  "ARTUR PALOMINO CODE1.ipynb" STRUCTURE
 
 This code is for testing different configurations for a VGG with single loss.
 
