@@ -191,9 +191,10 @@ Detail of the net structures:
 
 Figure4: VGG architecture
 
+*Image  from Neurohive [Neurohive](https://neurohive.io/en/popular-networks/vgg16/)
+
 - ALEXNET
 
-*Image  from Neurohive [Neurohive](https://neurohive.io/en/popular-networks/vgg16/)
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image3%20-%20AlexNet-CNN-architecture-layers.png?raw=true)
 
 Figure5: Alexnet architecture
