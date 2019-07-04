@@ -32,7 +32,8 @@ Results of the final project of the Deep Learning and Artificial Intelligence po
 For this project different architectures have been tested in order to train a model able to recognize if two faces correspond to the same person. For this purpose, I use Siamese networks that returns a classification output with a binary answer, in my case the answer is a vector of two elements or it can be one element with a dichotomic variable, depending on how the last layer of the net is configured, in this exercise I use only the first approach. If the first element of the vector is higher than the second element then I can say that the person is the same, in other cases the person is not the same.
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/image1%20-%20siamese.png?raw=true)
-Image1: siamese network
+
+Figure1: siamese network
 *Image  from Amazon [Amazon](https://aws.amazon.com/es/blogs/machine-learning/combining-deep-learning-networks-gan-and-siamese-to-generate-high-quality-life-like-images/)
 
 My first approach is to test different parameters of the optimizer, number of epochs, configuration of regularizations and nets, in order to arrive to the optimal combination that shows the best accuracy on validation and then with the chosen optimal combination make a test and check the test accuracy. In my case the best accuracy we obtained arrived to 86% and the configuration corresponds to a VGG with adam optimizer, with a learning rate of 1e-5 with weight decay of 0, pretrained but without freezing the layers and with data augmentation, for the data augmentation I used RandomHorizontalFlip, RandomAffine.
@@ -167,12 +168,14 @@ For my exercise I have tested two net configurations:
 - Siamese Decision Network with simple loss. traditional Siamese net where two nets are calculated in parallel, the results are concatenated, and the resulting loss is used to backpropagate.
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/ImageA%20-%20structure1.PNG?raw=true)
-Image2: Siamese network with 1 loss
+
+Figure2: Siamese network with 1 loss
 
 - Siamese Decision Network with the average of two losses. A different approach in which first I feed the Siamese net with the positive (true same person pairs) cases and I obtain its loss, then I feed again the Siamese net with negative cases (non same person pairs). Then the average of both losses is calculated and used to backpropagate. In this way I ensure that exactly the 50% of the cases are of one case and 50% of the opposite, this mechanism helps the net to train better in the opinion of the author of this project.
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/ImageB%20-%20structure2.PNG?raw=true)
-Image3: Siamese network with 2 losses
+
+Figure3: Siamese network with 2 losses
 
 
 
@@ -186,10 +189,14 @@ Detail of the net structures:
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image2%20-%20vgg16%20b.png?raw=true)
 
+Figure4: VGG architecture
+
 - ALEXNET
 
 *Image  from Neurohive [Neurohive](https://neurohive.io/en/popular-networks/vgg16/)
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image3%20-%20AlexNet-CNN-architecture-layers.png?raw=true)
+
+Figure5: Alexnet architecture
 
 *Image  from Researchgate [Researchgate](https://www.researchgate.net/figure/AlexNet-CNN-architecture-layers_fig1_318168077)
 
@@ -203,6 +210,9 @@ For the different tests I use the following parameters
 
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image4%20-%20parameters.PNG?raw=true)
+
+Table1: parameters tested
+
 For the Net in general all the members of the group made a test with a VGG, but I have also made other tests with other CNN like Alexnet.
 
 The optimizer I have used is Adam, this option is faster but in the result conclusions I will explain the benefits of considering other options.
@@ -222,8 +232,11 @@ Then I use two different architectures explained in the previous point.
 
 ## CODE  "ARTUR PALOMINO CODE1.ipynb" EXECUTIONS
 
-The following table shows the different results for the second architecture for the siamese network with two losses.
+The following table shows the different results for the first architecture for the siamese network with one losse.
+
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image5%20-%20results%20code1.PNG?raw=true)
+
+Table2: Results with single loss
 
 ### TEST 1
 
@@ -335,9 +348,11 @@ The configuration with the freeze and the learning rate of 1e-5 works great, I g
 
 ## CODE  "ARTUR PALOMINO CODE2.ipynb" EXECUTIONS
 
-The following table shows the different results for the first architecture, the siamese network with one loss.
+The following table shows the different results for the second architecture, the siamese network with two losses.
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/Image18%20-%20results%20code2.PNG?raw=true)
+
+Table3: Results with two losses
 
 ### TEST A:
 
@@ -560,6 +575,8 @@ In order to check the results in a real example I add a piece of code at the tes
 ##### Example with TEST E: VGG, LR 1E-5 WD0 PRETRAIN=1 DATA AUGM=1 FREEZE=0 
 
 ![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/DEMO.PNG?raw=true)
+
+Figure6: demo after execute
 
 ## Instructions_for_Demo
 
