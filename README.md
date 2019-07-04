@@ -22,6 +22,8 @@ ARTIFICIAL INTELLIGENCE AND DEEP LEARNING PROJECT - UPC
 
 [11. Instructions for Demo](#instructions_for_demo)
 
+[12. YoloFace](#yoloface)
+
 [References](#references)
 
 ## Introduction
@@ -594,6 +596,43 @@ The it is necessary to run sequentially every section in order until the end.
 
 Please don’t hesitate to contact me directly to my email if there is any doubt: estadisticman@hotmail.com
 
+## YoloFace
+
+## YOLOFACE
+
+In a first stage of the project we did some tests with yoloface[5] in order to make face detection, the results were nice, but we made more focus on the face recognition stage. In this chapter I will show some results and how to run a test with a form that takes pictures from the webcam and put on it the bounding boxes.
+
+First we need to download the files in the folder YOLO3. The you need to run the command:
+
+```
+Pip install -r requirements.txt
+```
+Then to execute you will need to download the weights from that link
+[https://drive.google.com/file/d/1xYasjU52whXMLT5MtF7RCPQkV66993oR/view?usp=sharing]()
+and put the weights in the folder "model-weights/"
+
+Then the reader will need to execute the command:
+```
+python yoloface2.py --image img_00002.jpg
+```
+This will open a form like that:
+
+![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/yoloface2.PNG?raw=true)
+
+By clicking on Start buton the webcam will start to work:
+
+![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/yoloface3.PNG?raw=true)
+
+The next step will be to click on the "Capture" buton and the app will show the same image but with the bounding boxes added on it:
+
+![N|Solid](https://github.com/bemolicida/AIDL-PROJECT-ARTURO-PALOMINO/blob/master/images/yoloface5.PNG?raw=true)
+
+Including the label "person" and the accuracy.
+
+
+
+
+
 ## References
 
 [1] Russakovsky, O., Deng, J., Su, H., Krause, J., Satheesh, S., Ma, S., ... & Fei-Fei, L. (2015). Imagenet large scale visual recognition challenge. arXiv preprint arXiv:1409.0575.
@@ -604,5 +643,6 @@ Please don’t hesitate to contact me directly to my email if there is any doubt
 
 [4] Krizhevsky, Alex, Ilya Sutskever, and Geoffrey E. Hinton. "Imagenet classification with deep convolutional neural networks.
 
+[5] https://github.com/sthanhng/yoloface
 
 
