@@ -4,7 +4,7 @@ ARTIFICIAL INTELLIGENCE AND DEEP LEARNING PROJECT - UPC
 # Index
 [1. Introduction](#introduction)
 [2. Codes Structure](#Codes_Structure)
-[3. CODE  "ARTUR PALOMINO CODE1.ipynb" STRUCTURE](#code__"artur_palomino_code1.ipynb"_structure)
+[3. CODE "ARTUR PALOMINO CODE1.ipynb" STRUCTURE](#code_"artur_palomino_code1.ipynb"_structure)
 [4. CODE  "ARTUR PALOMINO CODE2.ipynb" STRUCTURE](#4_code__"artur_palomino_code2.ipynb"_structure)
 [5. Motivation](#5_Motivation)
 [6. Models](#6.Models)
@@ -51,7 +51,7 @@ I mainly use two colab codes that the reader can check and see the different res
 -One for the Siamesse Decision Network with two losses: "ARTUR PALOMINO CODE2.ipynb"
 
 
-## CODE  "ARTUR PALOMINO CODE1.ipynb" STRUCTURE
+## CODE_"ARTUR_PALOMINO_CODE1.ipynb"_STRUCTURE
 
 This code is for testing different configurations for a VGG with single loss.
 
