@@ -611,7 +611,7 @@ Pip install -r requirements.txt
 ```
 Then to execute you will need to download the weights from that link:
 ```
-[https://drive.google.com/file/d/1xYasjU52whXMLT5MtF7RCPQkV66993oR/view?usp=sharing]()
+https://drive.google.com/file/d/1xYasjU52whXMLT5MtF7RCPQkV66993oR/view?usp=sharing
 ```
 and put the weights in the folder "model-weights/"
 
