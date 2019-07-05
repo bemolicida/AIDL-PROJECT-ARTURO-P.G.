@@ -38,20 +38,20 @@ For this project different architectures have been tested in order to train a mo
 Figure1: siamese network
 *Image  from Amazon [Amazon](https://aws.amazon.com/es/blogs/machine-learning/combining-deep-learning-networks-gan-and-siamese-to-generate-high-quality-life-like-images/)
 
-My first approach is to test different parameters of the optimizer, number of epochs, configuration of regularizations and nets, in order to arrive to the optimal combination that shows the best accuracy on validation and then with the chosen optimal combination make a test and check the test accuracy. In my case the best accuracy we obtained arrived to 86% and the configuration corresponds to a VGG with adam optimizer, with a learning rate of 1e-5 with weight decay of 0, pretrained but without freezing the layers and with data augmentation, for the data augmentation I used RandomHorizontalFlip, RandomAffine.
+My first approach is to test different parameters of the optimizer, number of epochs, configuration of regularizations and nets, in order to arrive to the optimal combination that shows the best accuracy on validation and then with the chosen optimal combination make a test and check the test accuracy. In my case the best accuracy I obtained arrived to 86% and the configuration corresponds to a VGG with adam optimizer, with a learning rate of 1e-5 with weight decay of 0, pretrained but without freezing the layers and with data augmentation, for the data augmentation I used RandomHorizontalFlip, RandomAffine.
 
 ## Codes_Structure
  
 ```bash
 AIDL-PROJECT-ARTURO-PALOMINO
 ├── images
-│   ├── *.png
+│   └── *.png
 ├── DEMO FILES AND WEIGHTS
 │   ├── Artur Demo.ipynb
 │   ├── links to the weights and needed files.txt
-│   ├── requirements.txt
+│   └── requirements.txt
 ├── YOLOFACE
-│   ├──*.*
+│   └──*.*
 ├── ARTUR PALOMINO CODE1.ipyn
 ├── ARTUR PALOMINO CODE2.ipynb
 └── README.md
@@ -554,7 +554,7 @@ LR of 1e-3 normally is not a good option and 1e-5 & 5e-4 normally worked better
 
 ## Future_work
 
-In future works I will try to run other networkds (resnet, densenet, googlenet) and losses (triple loss, constractive loss). Another improve according with last class (june 27th) recomendations to arrive better to global minimum I will try to rerun the best combinations with pure SGD, as it seems to be slower but with better results. Also, as you will see in the chapter  [12. YoloFace](#yoloface) We had the chance to test yolo faces with great results, in future works I will merge both algorithms in order to make the whole cycle of detecting a human face and then trying to decide if the person is someone that is already in a database of known persons by the system.
+In future works I will try to run other networkds (resnet, densenet, googlenet) and losses (triple loss, constractive loss). Another improve according with last class (june 27th) recomendations to arrive better to global minimum I will try to rerun the best combinations with pure SGD, as it seems to be slower but with better results. Also, as you will see in the chapter  [12. YoloFace](#yoloface) I had the chance to test yolo faces with great results, in future works I will merge both algorithms in order to make the whole cycle of detecting a human face and then trying to decide if the person is someone that is already in a database of known persons by the system.
 
 ## DEMO
 
@@ -582,11 +582,11 @@ All the files must be placed in a subfolder named “Weights_here” following t
 ```bash
 AIDL-PROJECT-ARTURO-PALOMINO 
 ├── Artur Demo.ipynb
-│   ├── WEIGHTS_HERE
-│   ───├── Artur_weights_siamese_epoch 59__modelAlexnet_amp 1_pretr 0_lr 1e-05_wd 0.pt
-│   ───├── Pair_list_F
-│   ───├── Pair_list_P
-│   ───├── Artur_test.pt
+│   └── WEIGHTS_HERE
+│       ├── Artur_weights_siamese_epoch 59__modelAlexnet_amp 1_pretr 0_lr 1e-05_wd 0.pt
+│       ├── Pair_list_F
+│       ├── Pair_list_P
+│       └─ Artur_test.pt
 ```
 The reader will need to change the paths at the second section of the code “Packages and other variables”. This is an example of how it’s in my current configuration:
 ```
@@ -602,9 +602,9 @@ Please don’t hesitate to contact me directly to my email if there is any doubt
 
 ## YOLOFACE
 
-In a first stage of the project we did some tests with yoloface[5] in order to make face detection, the results were nice, but we made more focus on the face recognition stage. In this chapter I will show some results and how to run a test with a form that takes pictures from the webcam and put on it the bounding boxes.
+In a first stage of the project I did some tests with yoloface[5] in order to make face detection, the results were nice, but I made more focus on the face recognition stage. In this chapter I will show some results and how to run a test with a form that takes pictures from the webcam and put on it the bounding boxes.
 
-First we need to download the files in the folder YOLOFACE. The you need to run the command:
+First I need to download the files in the folder YOLOFACE. The you need to run the command:
 
 ```
 Pip install -r requirements.txt
