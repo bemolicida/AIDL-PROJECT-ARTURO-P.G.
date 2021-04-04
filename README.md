@@ -236,7 +236,7 @@ Then I use two different architectures explained in the previous point.
 
 ## Results
 
-## CODE  "ARTUR PALOMINO CODE1.ipynb" EXECUTIONS
+## CODE  "ARTUR PG CODE1.ipynb" EXECUTIONS
 
 The following table shows the different results for the first architecture for the siamese network with one loss.
 
