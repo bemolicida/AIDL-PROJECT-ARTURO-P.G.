@@ -27,7 +27,7 @@ ARTIFICIAL INTELLIGENCE AND DEEP LEARNING PROJECT - UPC
 [References](#references)
 
 ## Introduction
-Student: Arturo Palomino
+Student: Arturo PG
 Team: 4
 Results of the final project of the Deep Learning and Artificial Intelligence post degree of the UPC talent-school.
 
