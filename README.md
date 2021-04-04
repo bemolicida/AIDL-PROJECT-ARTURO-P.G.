@@ -43,7 +43,7 @@ My first approach is to test different parameters of the optimizer, number of ep
 ## Codes_Structure
  
 ```bash
-AIDL-PROJECT-ARTURO-PALOMINO
+AIDL-PROJECT-ARTURO-P.G.
 ├── images
 │   └── *.png
 ├── DEMO FILES AND WEIGHTS
@@ -52,8 +52,8 @@ AIDL-PROJECT-ARTURO-PALOMINO
 │   └── requirements.txt
 ├── YOLOFACE
 │   └──*.*
-├── ARTUR PALOMINO CODE1.ipyn
-├── ARTUR PALOMINO CODE2.ipynb
+├── ARTUR PG CODE1.ipyn
+├── ARTUR PG CODE2.ipynb
 └── README.md
 ```
 
@@ -64,14 +64,14 @@ I mainly use two colab codes that the reader can check and see the different res
 -One for the Siamesse Decision Network with two losses: "ARTUR PALOMINO CODE2.ipynb"
 
 
-### CODE  "ARTUR PALOMINO CODE1.ipynb" STRUCTURE
+### CODE  "ARTUR PG CODE1.ipynb" STRUCTURE
 
 This code is for testing different configurations for a VGG with single loss.
 
 I split the code in 7 sections:
 
 
-##### ARTUR PALOMINO CODE1.ipynb
+##### ARTUR PG CODE1.ipynb
 ```
 
 ├─  MOUNTING DRIVE   -> I mount google drive CFPW images that were previously uploaded 
@@ -106,7 +106,7 @@ After this, different test are calculated with different parameter configuration
 
 ```
 
-### CODE  "ARTUR PALOMINO CODE2.ipynb" STRUCTURE
+### CODE  "ARTUR PG CODE2.ipynb" STRUCTURE
 
 This code is for testing different configurations for a VGG and an Alexnet with two losses.
 
